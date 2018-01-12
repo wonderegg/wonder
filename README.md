@@ -1,6 +1,4 @@
-# CED
-Ethereum-boys Team: Orion, Joacoelho93, SeanXunCao
-Ethereum-boys project start up
+# 
 
 Ideas of using Ethereum Smart Contract project
 1. Tracking credit of training program
