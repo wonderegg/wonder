@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 
-    <link rel="stylesheet" type="text/css" href="./web/css/wonder.css" >
     <link rel="stylesheet" type="text/css" href="./web/css/main.css">
 
     <script src="./node_modules/web3/dist/web3.min.js"></script>
@@ -24,32 +23,15 @@
                 <h1 class="Header-wordmark">WonderEgg</h1>
             </a>
             <nav class="Header-navigation">
-                <a class="Header-navigation-item Header-navigation-item--active" aria-current="true" href="./index.html">My Wodner Egg</a>
+                <a class="Header-navigation-item" aria-current="true" href="./index.html">My Wodner Egg</a>
                 <a class="Header-navigation-item" aria-current="false" href="./marketplace.html">Marketplace</a>
                 <a class="Header-navigation-item" aria-current="false" href="./help.html">Help</a>
-                <a class="Header-navigation-item" aria-current="false" href="./admin.html">Admin</a>
+                <a class="Header-navigation-item Header-navigation-item--active" aria-current="false" href="./admin.html">Admin</a>
             </nav>
         </div>
     </div>
 
     <div class="container">
-
-        <h1>Wonder Puppy Egg</h1>
-        <span id="countIns"></span>
-
-        <h1 id="instructor"></h1>
-        <span id="insTrans"></span>
-        <hr>
-        <img id="loader" src="./web/pic/lg.double-ring-spinner.gif">
-
-        <label for="idName" class="col-lg-2 control-label">Wonder Puppy Egg Name(input your Wonder Egg name here)</label>
-        <input id="idName" type="text">
-
-        <label for="lDescription" class="col-lg-2 control-label">Wonder Puppy Egg Description ID(input only between 1-7 for now to save gas fee)</label>
-        <input id="lDescription" type="text">
-
-        <label for="age" class="col-lg-2 control-label">Puppy Price ether</label>
-        <input id="age" type="text">
 
         <label for="sellPriceRate" class="col-lg-2 control-label">onwer set sell Price Rate</label>
         <input id="sellPriceRate" type="text">
@@ -57,11 +39,10 @@
         <label for="buyPriceRate" class="col-lg-2 control-label">onwer set buy Price Rate</label>
         <input id="buyPriceRate" type="text">
 
-        <button id="button1">Create Your New Puppy Egg(for free now)</button>
 
+        <button id="button2">Owner set buy/sell price rate(only for contract owner setting purpose, others can not run)</button>
 
         <button id="button3">Reload page</button>
-
 
     </div>
 
@@ -94,6 +75,9 @@
         var sellrate =1;
 
 
+
+
+
         Coursetro.getPrices(function(error, result){
             if(result)
                 {
@@ -112,8 +96,7 @@
         });
 
 
-
-
+/*
         var outtext;
 
           Coursetro.getlastWonderStruct(function(error, result){
@@ -277,7 +260,7 @@
             }
         });
 
-
+*/
         $("#button1").click(function() {
             Coursetro.setWonderStruct(web3.eth.defaultAccount, $("#age").val()*sellrate, $("#idName").val(), $("#lDescription").val(), function(error,result){
                 if(error)  
@@ -295,6 +278,23 @@
         });
 
 
+
+        $("#button2").click(function() {
+            $("#loader").show();
+             renderApp();
+            Coursetro.setPrices($("#sellPriceRate").val(), $("#buyPriceRate").val(), function(error,result){
+                if(error)  
+                {
+                    console.log("Please check error: etheruem user is not authorize to change sell / buy price rate");
+                    console.error(error);
+                    $("#loader").hide(); 
+                }
+                else {
+                    console.log("set Sell Price rate: " + $("#sellPriceRate").val() + " Buy Price rate:" + $("#buyPriceRate").val() );
+                    $("#loader").hide(); 
+                }
+            });
+        });
 
 
 

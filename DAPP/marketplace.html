@@ -24,8 +24,8 @@
                 <h1 class="Header-wordmark">WonderEgg</h1>
             </a>
             <nav class="Header-navigation">
-                <a class="Header-navigation-item Header-navigation-item--active" aria-current="true" href="./index.html">My Wodner Egg</a>
-                <a class="Header-navigation-item" aria-current="false" href="./marketplace.html">Marketplace</a>
+                <a class="Header-navigation-item" aria-current="true" href="./index.html">My Wodner Egg</a>
+                <a class="Header-navigation-item Header-navigation-item--active" aria-current="false" href="./marketplace.html">Marketplace</a>
                 <a class="Header-navigation-item" aria-current="false" href="./help.html">Help</a>
                 <a class="Header-navigation-item" aria-current="false" href="./admin.html">Admin</a>
             </nav>
@@ -59,9 +59,9 @@
 
         <button id="button1">Create Your New Puppy Egg(for free now)</button>
 
+        <button id="button2">Owner set buy/sell price rate(only for contract owner setting purpose, others can not run)</button>
 
         <button id="button3">Reload page</button>
-
 
     </div>
 
@@ -94,6 +94,9 @@
         var sellrate =1;
 
 
+
+
+
         Coursetro.getPrices(function(error, result){
             if(result)
                 {
@@ -110,8 +113,6 @@
                 console.error(error);
             }
         });
-
-
 
 
         var outtext;
@@ -173,7 +174,7 @@
            //output =output + ' , ' + i;
            //outtext = outtext + i;
 
-           Coursetro.getWonderStructByAddress(i, web3.eth.defaultAccount, function(error, result){
+           Coursetro.getWonderStructByID(i, function(error, result){
             var text = '';
             if(result)
                 {
@@ -295,6 +296,23 @@
         });
 
 
+
+        $("#button2").click(function() {
+            $("#loader").show();
+             renderApp();
+            Coursetro.setPrices($("#sellPriceRate").val(), $("#buyPriceRate").val(), function(error,result){
+                if(error)  
+                {
+                    console.log("Please check error: etheruem user is not authorize to change sell / buy price rate");
+                    console.error(error);
+                    $("#loader").hide(); 
+                }
+                else {
+                    console.log("set Sell Price rate: " + $("#sellPriceRate").val() + " Buy Price rate:" + $("#buyPriceRate").val() );
+                    $("#loader").hide(); 
+                }
+            });
+        });
 
 
 

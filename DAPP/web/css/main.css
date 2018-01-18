@@ -22,6 +22,12 @@ button {
     display:block;
 }
 
+button1 {
+    margin: 2em 0;
+    padding: 1em 4em;
+    display:block;
+}
+
 #instructor {
     padding:1em;
     background-color:#fff;
