@@ -1,5 +1,5 @@
 # 
-
+ 
 Ideas of using Ethereum Smart Contract project
 1. Tracking credit of training program
 2. create digital surprising eggs -- which my daughters love most :) . Tracking dinasour/Ester/surprise eggs generation, dinasour breeding on DAPP

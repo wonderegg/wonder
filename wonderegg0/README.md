@@ -4,7 +4,6 @@ Ideas of using Ethereum Smart Contract project
 1. Tracking credit of training program
 2. create digital surprising eggs -- which my daughters love most :) . Tracking dinasour/Ester/surprise eggs generation, dinasour breeding on DAPP
 
-
 Logon website : http://lemonthy.ca and choose Ropsten metamask Ethereum test network, you can create/purchase for free on new Wonder eggs now!
 
 
