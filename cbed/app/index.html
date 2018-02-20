@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CBED</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+
+
+</head>
+<body>
+    <div class="container">
+
+        <h1>CBED </h1>
+        <span id="countIns"></span>
+
+        <h1 id="instructor"></h1>
+        <span id="status"></span>
+        <hr>
+        <img id="loader" src="../../app/web/pic/lg.double-ring-spinner.gif">
+
+        <label for="id" class="col-lg-2 control-label">id</label>
+        <input id="id" type="text">
+
+        <label for="cid" class="col-lg-2 control-label">cid</label>
+        <input id="cid" type="text">
+
+        <label for="fullname" class="col-lg-2 control-label">fullname</label>
+        <input id="fullname" type="text">
+
+        <label for="coursename" class="col-lg-2 control-label">coursename</label>
+        <input id="coursename" type="text">
+
+        <label for="issuedOn" class="col-lg-2 control-label">issuedOn</label>
+        <input id="issuedOn" type="text">
+
+        <label for="validUntil" class="col-lg-2 control-label">validUntil</label>
+        <input id="validUntil" type="text">
+
+        <br><br>
+
+        <button id="setCED" onclick="App.setCED()">setCED</button>
+
+        <button id="getlastCED" onclick="App.refreshBalance()"> Reload page getlastCED</button>
+
+        <button id="getCEDByID" onclick="App.getCEDByID()"> getCEDByID</button>
+
+        <button id="getCEDByCID" onclick="App.getCEDByCID()"> getCEDByCID</button>
+
+
+    </div>
+
+
+
+
+
+</body>
+</html>
