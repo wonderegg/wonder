@@ -1,4 +1,4 @@
-# 
+# role: graphic designer,solidty developer,webpage developer,PM,Archticture
 
 Ideas of using Ethereum Smart Contract project
 1. Tracking credit of training program
