@@ -1,7 +1,8 @@
 # Team mumbers:
-catherinezhou1212, 
-Jacky-Z, 
-James Xia
+
+
+## role: graphic designer,solidty developer,webpage developer,PM,Architect
+
 
  # Projective
 Ideas of using Ethereum Smart Contract project
@@ -9,7 +10,7 @@ Ideas of using Ethereum Smart Contract project
 2. create digital surprising eggs -- which my daughters love most :) . Tracking dinasour/Ester/surprise eggs generation, dinasour breeding on DAPP
 
 # Reference information
-Logon website : http://lemonthy.ca and choose Ropsten metamask Ethereum test network, you can create/purchase for free on new Wonder eggs now!
+Logon website : http://cryptofrog.co and choose Ropsten metamask Ethereum test network, you can create/purchase for free on new Wonder eggs now!
 
 
 step for setup test enviroment for contracts.
@@ -36,7 +37,7 @@ $ cd TruffleTestProject
 
 step for create or purchase a new wonder egg puppy on block chain network:
 
-Logon website : http://lemonthy.ca and choose Ropsten metamask Ethereum test network, you can create/purchase for free on new Wonder eggs now!
+Logon website : http://cryptofrog.co and choose Ropsten metamask Ethereum test network, you can create/purchase for free on new Wonder eggs now!
 1. open chrome and intall metamask.
 Wanna play?
 You’ll need a safe place to store all of your adorable wonder egg puppies! The perfect place is in a secure wallet like MetaMask. This will also act as your login to the game (no extra password needed).
@@ -44,7 +45,7 @@ Install MetaMask
 you will need to install MetaMask, a digital wallet. You will need to put money in it to make your first purchase.
 Note: A digital wallet like MetaMask acts like a bank account—treat it with respect and make sure you don’t forget your password or the seed words.
 Occasionally the metemask page displays a lock screen. This happens because MetaMask locks your account after a certain period of time automatically. To unlock simply click on the MetaMask extension and type in your password.
-2. open http://lemonthy.ca and choose Ropsten metamask Ethereum test network on metamask, you can create/purchase for free on new Wonder eggs for free now! 
+2. open http://cryptofrog.co and choose Ropsten metamask Ethereum test network on metamask, you can create/purchase for free on new Wonder eggs for free now! 
  
  
 
@@ -63,13 +64,13 @@ Occasionally the metemask page displays a lock screen. This happens because Meta
 As a new user log on, you can only see the youngest wonder egg descrption and currently total wonder egg puppy on block chain.
 Please feel free to create your own wonder egg /puppy because it is free now.
  
-![LINK1](../wonderegg0/DAPP/web/pic/1.jpg)
-![LINK2](../wonderegg0/DAPP/web/pic/2.jpg)
-![LINK3](../wonderegg0/DAPP/web/pic/3.jpg)
-![LINK4](../wonderegg0/DAPP/web/pic/4.jpg)
-![LINK5](../wonderegg0/DAPP/web/pic/5.jpg)
-![LINK6](../wonderegg0/DAPP/web/pic/6.jpg)
-![LINK7](../wonderegg0/DAPP/web/pic/7.jpg)
+![LINK1](./DAPP/app/assets/img/1.jpg)
+![LINK2](./DAPP/app/assets/img/2.jpg)
+![LINK3](./DAPP/app/assets/img/3.jpg)
+![LINK4](./DAPP/app/assets/img/4.jpg)
+![LINK5](./DAPP/app/assets/img/5.jpg)
+![LINK6](./DAPP/app/assets/img/6.jpg)
+![LINK7](./DAPP/app/assets/img/7.jpg)
 
 Roadmap:
 
@@ -95,7 +96,7 @@ Ester egg distance of walk execsise(1 KM per egg).
 surprise egg distance of walk execsise(1 KM per egg).
 
 evolve rules for smart contract 1: 
-![Worklfow](../wonderegg0/DAPP/web/pic/IMG_2238.JPG)
+![Worklfow](./DAPP/app/assets/img/IMG_2238.JPG)
  
 Dinosaur egg + Dinosaur can evolve to new type Dinosaur 
 Ester egg + Easter Bunny can evolve to new type Bunny
