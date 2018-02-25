@@ -3,6 +3,12 @@ catherinezhou1212,
 Jacky-Z, 
 James Xia
 
+# role: graphic designer,solidty developer,webpage developer,PM,Architect
+# role: catherinezhou1212, Jacky-Z, James Xia
+catherinezhou1212 
+Jacky-Z
+James Xia
+
  # Projective
 Ideas of using Ethereum Smart Contract project
 1. Tracking credit of training program
