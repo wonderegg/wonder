@@ -8,7 +8,7 @@ Ideas of using Ethereum Smart Contract project
 2. create digital surprising eggs -- which my daughters love most :) . Tracking dinasour/Ester/surprise eggs generation, dinasour breeding on DAPP
 
 # Reference information
-Logon website : http://lemonthy.ca and choose Ropsten metamask Ethereum test network, you can create/purchase for free on new Wonder eggs now!
+Logon website : http://cryptofrog.co and choose Ropsten metamask Ethereum test network, you can create/purchase for free on new Wonder eggs now!
 
 
 step for setup test enviroment for contracts.
@@ -35,7 +35,7 @@ $ cd TruffleTestProject
 
 step for create or purchase a new wonder egg puppy on block chain network:
 
-Logon website : http://lemonthy.ca and choose Ropsten metamask Ethereum test network, you can create/purchase for free on new Wonder eggs now!
+Logon website : http://cryptofrog.co and choose Ropsten metamask Ethereum test network, you can create/purchase for free on new Wonder eggs now!
 1. open chrome and intall metamask.
 Wanna play?
 You’ll need a safe place to store all of your adorable wonder egg puppies! The perfect place is in a secure wallet like MetaMask. This will also act as your login to the game (no extra password needed).
@@ -43,7 +43,7 @@ Install MetaMask
 you will need to install MetaMask, a digital wallet. You will need to put money in it to make your first purchase.
 Note: A digital wallet like MetaMask acts like a bank account—treat it with respect and make sure you don’t forget your password or the seed words.
 Occasionally the metemask page displays a lock screen. This happens because MetaMask locks your account after a certain period of time automatically. To unlock simply click on the MetaMask extension and type in your password.
-2. open http://lemonthy.ca and choose Ropsten metamask Ethereum test network on metamask, you can create/purchase for free on new Wonder eggs for free now! 
+2. open http://cryptofrog.co and choose Ropsten metamask Ethereum test network on metamask, you can create/purchase for free on new Wonder eggs for free now! 
  
  
 
