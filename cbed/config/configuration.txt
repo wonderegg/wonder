@@ -1,0 +1,71 @@
+### The following steps are for developers to Install software, configurat/set up environment, compile, migrate/deploy, run, test and stop the application during development of the cbed porject. (The settings in the document are for Windows users.)
+
+
+### Register as a use in GitHub and remember your login id and password :  https://github.com 
+
+
+### Download Git Client from https://git-scm.com/download/win  and install Git Client on you PC
+(Atlassian Sourcetree https://www.sourcetreeapp.com/  https://git-scm.com/download/gui/windows )
+Update your PC environment path to include Git.exe  
+
+
+### Login to GitHub and go to https://github.com/wonderegg/wonder, and click button "clone and download", copy the url https://github.com/wonderegg/wonder.git
+
+
+### Clone repository in your PC and pull the repository into your PC from GitHub https://github.com/wonderegg/wonder;
+make sure download latest cbed project from GitHub: https://github.com/wonderegg/wonder/tree/master/cbed
+
+
+### Install Metamask plugin in your browser:  https://metamask.io/ 
+Create your account(Acc#1) using Metamask, and remember your password. 
+
+
+### Download and Install geth from here: https://geth.ethereum.org/downloads/ 
+Update your PC environment path to include geth 
+Create your account(Acc#2) using geth, and remember your password.
+
+
+### Install NodeJS from here: https://nodejs.org/en/
+Update your PC environment path to include nodejs and nodejs/scripts
+  
+
+### Install and run TestRPC client
+  * npm install -g ethereumjs-testrpc
+  * testrpc
+  * keep the tab open in background, open new tab
+
+  
+### Install Truffle
+  * npm install -g truffle
+  * mkdir TruffleTestProject
+  * cd TruffleTestProject
+
+  
+### Load the project
+  * truffle unbox webpack
+  * manaully edit truffle.js change port: 7545 to port: 8545
+  * cd contracts
+  * truffle compile
+  * truffle migrate
+  * npm run dev
+  * open web page as screen show with port: http://localhost:8080/
+
+  * ctrl+c stop npm run dev, ctrl+break to stop testrpc
+  * stop testrpc and start geth console
+  * personal.unlockAccount(eth.coinbase)
+  * miner.start(1)
+
+  * on other windows ctrl+c stop npm run dev, rerun truffle migrate, wait until contract deploy successful
+  * npm run dev
+  * open web page as screen show with port: http://localhost:8080/
+
+  * install metatask on chrome & create account, import your account under keystore folder, connect to your account
+  * Install Chrome extension MetaMask with new user https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en
+  * Import your user id from json under geth keystore folder. Post your public key to class channel to get ropsten ethers
+  * personal.unlockAccount(Acc#1)  
+  * miner.start(1)  
+  * use Acc#1 and Acc#2 to send coin test on popup window of metatask
+
+  * miner.stop()
+  * ctrl+c stop npm run dev   
+
