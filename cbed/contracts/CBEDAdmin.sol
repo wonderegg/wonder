@@ -124,7 +124,7 @@ contract CBEDAdmin is CBED {
     function CBEDAdminLogin(string _adminId,string _fullname) onlyAdmin( _adminId) public {
     ////still have some thing need to be discussed about login function ???? 
     ////maybe we don't need login function but need check onlyAdmin for each admin function. ???
-      return ;
+      return ; 
     }*/
 
 
