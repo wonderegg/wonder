@@ -49,7 +49,7 @@ contract CBED {
 	/* declaration of CBED array to store CBED instances*/
 	CBEDStruct[] public CBEDStructArray; 
 
-	/* initial CBEDID for CBED */
+	/* initial CBED ID for CBED */
 	uint256 public CEDID = 0 ;
 
 	/* Define variable cert of the type string */
@@ -59,7 +59,7 @@ contract CBED {
 	/* This runs when the contract is executed */
 	function CBED() public {
 		owner = msg.sender;  //set owner
-		cert = "Certificed Ethereum Program";  //set cert value
+		cert = "Certificed Blockchain Ethereum Developer";  //set cert value
 	}
 
 

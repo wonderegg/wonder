@@ -17,7 +17,7 @@ contract CBEDAdmin is CBED {
       uint256 adminId;          //Admin index id
       string fullname;          //Admin name
       string lastLogin;         //last login time 
-      bool adminPermitStatus; //permission activation for Admin issueing cert to balockchain developer 
+      bool adminPermitStatus;   //permission activation for Admin issueing cert to balockchain developer 
     } 
 
 
