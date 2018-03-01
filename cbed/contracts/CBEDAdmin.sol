@@ -1,9 +1,9 @@
 import "./CBED.sol";
 
-pragma solidity ^0.4.0;
+pragma solidity ^0.4.20;
 
 
-contract CBEDAdmin {
+contract CBEDAdmin is CBED {
 
   struct CBEDAdminStruct {
     uint256 id;

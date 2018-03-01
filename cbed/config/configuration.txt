@@ -27,7 +27,11 @@ Create your account(Acc#2) using geth, and remember your password.
 
 ### Install NodeJS from here: https://nodejs.org/en/
 Update your PC environment path to include nodejs and nodejs/scripts
-  
+
+
+### Install Solidity 
+  * npm install -g solc  
+
 
 ### Install and run TestRPC client
   * npm install -g ethereumjs-testrpc
@@ -59,7 +63,7 @@ Update your PC environment path to include nodejs and nodejs/scripts
   * npm run dev
   * open web page as screen show with port: http://localhost:8080/
 
-  * install metatask on chrome & create account, import your account under keystore folder, connect to your account
+  * (if it is not done before, install metatask on chrome & create Acc#1) import your Acc#2 under keystore folder, connect to your account
   * Install Chrome extension MetaMask with new user https://chrome.google.com/webstore/detail/metamask/nkbihfbeogaeaoehlefnkodbefgpgknn?hl=en
   * Import your user id from json under geth keystore folder. Post your public key to class channel to get ropsten ethers
   * personal.unlockAccount(Acc#1)  
