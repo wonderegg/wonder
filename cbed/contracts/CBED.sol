@@ -64,7 +64,7 @@ contract CBED {
 
 
     /* function getCBEDStructByID() for getting a cert by index id */
-	function getCBEDStructByID(uint256 i) constant public returns (uint256 , string , string ,string ,string ,string ) {
+	function getCBEDStructByID(uint256 i) view public returns (uint256 , string , string ,string ,string ,string ) {
 	  if (i>0) {i = i-1;} 
 	    else { i =0 ;}
 	  return (CBEDStructArray[i].id, CBEDStructArray[i].cid,CBEDStructArray[i].fullname,CBEDStructArray[i].coursename,CBEDStructArray[i].issuedOn, CBEDStructArray[i].validUntil);
@@ -72,7 +72,7 @@ contract CBED {
 
 
     /* function getCBEDStructByCID() for getting a cert by certified developer id */
-	function getCBEDStructByCID(string _cid) constant public returns (uint256 , string , string ,string ,string ,string ) {
+	function getCBEDStructByCID(string _cid) view public returns (uint256 , string , string ,string ,string ,string ) {
 	  for (uint256 i = 0; i < CBEDStructArray.length ; i++) {
 	      if ( keccak256(_cid)==keccak256(CBEDStructArray[i].cid) ) {
 	        return (CBEDStructArray[i].id, CBEDStructArray[i].cid,CBEDStructArray[i].fullname,CBEDStructArray[i].coursename,CBEDStructArray[i].issuedOn, CBEDStructArray[i].validUntil);
@@ -88,7 +88,7 @@ contract CBED {
 
 
     /* function getlastCBED() for getting the last certified developer cert in the CBED blockchain */
-	function getlastCBED( ) constant public returns (uint256 _id, string _cid, string _fullname,string _coursename,string _issuedOn,string _validUntil) {
+	function getlastCBED( ) view public returns (uint256 _id, string _cid, string _fullname,string _coursename,string _issuedOn,string _validUntil) {
 		return (CED.id, CED.cid,CED.fullname,CED.coursename,CED.issuedOn, CED.validUntil );
 
 	}

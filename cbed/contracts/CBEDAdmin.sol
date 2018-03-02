@@ -73,7 +73,7 @@ contract CBEDAdmin is CBED {
 
 
     /* function searchcEDAdminByAdminID()  */
-    function searchcEDAdminByAdminID(string _adminId ) constant public returns ( string ) {
+    function searchcEDAdminByAdminID(string _adminId ) view public returns ( string ) {
         
       //find admin by admin id and return the admin (will add steps for searching)
       _adminId ="";      
@@ -82,7 +82,7 @@ contract CBEDAdmin is CBED {
 
 
     /* function listcEDAdmin()  */
-    function listcEDAdmin()  constant public returns ( string ) { 
+    function listcEDAdmin()  view public returns ( string ) { 
         
       //find admin list and return all admins  (will add steps for listing)
 

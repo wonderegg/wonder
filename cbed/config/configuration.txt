@@ -1,32 +1,35 @@
-### The following steps are for developers to Install software, configurat/set up environment, compile, migrate/deploy, run, test and stop the application during development of the cbed porject. (The settings in the document are for Windows users.)
+### The following steps are for developers to Install software, configurat/set up environment, compile, migrate/deploy, run, test and stop the application during development of the cbed porject. 
+
+## Note: The settings in the document are for PC OS Windows users. 
+All Windows command line is running under command prompt of "Run as Administrator"
 
 
 ### Register as a use in GitHub and remember your login id and password :  https://github.com 
 
 
 ### Download Git Client from https://git-scm.com/download/win  and install Git Client on you PC
-(Atlassian Sourcetree https://www.sourcetreeapp.com/  https://git-scm.com/download/gui/windows )
-Update your PC environment path to include Git.exe  
+(Atlassian Sourcetree https://www.sourcetreeapp.com/ , https://git-scm.com/download/gui/windows )
+Update your PC environment path to include the path of Git.exe  
 
 
-### Login to GitHub and go to https://github.com/wonderegg/wonder, and click button "clone and download", copy the url https://github.com/wonderegg/wonder.git
+### Login to GitHub and go to https://github.com/wonderegg/wonder, and click button "clone and download" (in green), copy the url https://github.com/wonderegg/wonder.git
 
 
 ### Clone repository in your PC and pull the repository into your PC from GitHub https://github.com/wonderegg/wonder;
-make sure download latest cbed project from GitHub: https://github.com/wonderegg/wonder/tree/master/cbed
+make sure pull/download latest cbed project codes from GitHub: https://github.com/wonderegg/wonder/tree/master/cbed
 
 
 ### Install Metamask plugin in your browser:  https://metamask.io/ 
-Create your account(Acc#1) using Metamask, and remember your password. 
+Create your account(let's call Acc#1) using Metamask, and remember your password. 
 
 
-### Download and Install geth from here: https://geth.ethereum.org/downloads/ 
-Update your PC environment path to include geth 
+### Download geth from here: https://geth.ethereum.org/downloads/ and Install it in your PC
+Update your PC environment path to include the pat of geth.exe 
 Create your account(Acc#2) using geth, and remember your password.
 
 
 ### Install NodeJS from here: https://nodejs.org/en/
-Update your PC environment path to include nodejs and nodejs/scripts
+Update your PC environment path to include the path of nodejs and nodejs/scripts
 
 
 ### Install Solidity 
