@@ -44,8 +44,8 @@ Update your PC environment path to include the path of nodejs and nodejs/scripts
   
 ### Install Truffle
   * npm install -g truffle
-  * mkdir TruffleTestProject
-  * cd TruffleTestProject
+  * mkdir TruffleTestProject //this folder is jut for test, you do not need to create it for our project.
+  * cd TruffleTestProject    //this is a test folder, for our project cd <your PC folder of cbed>
 
   
 ### Load the project
