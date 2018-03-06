@@ -1,57 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html class="no-js" lang="@lang">
 <head>
-  <title>CBED</title>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  <script src="./app.js"></script>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="description" content="@firstScreen.description">
+  <meta name="robots" content="noarchive">
+  <meta name="viewport" content="width=device-width">
+  <title>@firstScreen.appTitle</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+
+  <!-- fb -->
+  <meta property="og:title" content="Wonder Egg" />
+  <meta property="og:description" content="Crypto Wonder Egg on Blockchain"/>
+  <meta property="og:url" content="https://cryptoegg.ca/" />
+  <meta property="og:image" content="./images/wonder/1.svg"/>
+  <!-- tw -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@cryptoegg_">
+  <meta name="twitter:title" content="Wonder Egg">
+  <meta name="twitter:description" content="Crypto Wonder Egg on Blockchain">
+  <meta name="twitter:image" content="./images/wonder/1.svg">
+
+  <script src="https://use.typekit.net/phh1zho.js"></script>
+  <script>try{Typekit.load();}catch(e){}</script>
 
 
+  <!-- inject:css -->
+  <!-- endinject -->
 </head>
-<body>
-    <div class="container">
+<body data-env="@env">
 
-        <h1>CBED </h1>
-        <span id="countIns"></span>
+  @include('./partials/_header.html')
 
-        <h1 id="instructor"></h1>
-        <span id="status"></span>
-        <hr>
-        <img id="loader" src="../../app/web/pic/lg.double-ring-spinner.gif">
+  <div class="wrapper">
+    @include('./partials/_first-screen.html')
 
-        <label for="id" class="col-lg-2 control-label">id</label>
-        <input id="id" type="text">
+    @include('./partials/_about.html')
 
-        <label for="cid" class="col-lg-2 control-label">cid</label>
-        <input id="cid" type="text">
+    @include('./partials/_orange-block.html')
 
-        <label for="fullname" class="col-lg-2 control-label">fullname</label>
-        <input id="fullname" type="text">
+    @include('./partials/_product.html')
 
-        <label for="coursename" class="col-lg-2 control-label">coursename</label>
-        <input id="coursename" type="text">
+    @include('./partials/_why-rentberry.html')
 
-        <label for="issuedOn" class="col-lg-2 control-label">issuedOn</label>
-        <input id="issuedOn" type="text">
+    @include('./partials/_team.html')
 
-        <label for="validUntil" class="col-lg-2 control-label">validUntil</label>
-        <input id="validUntil" type="text">
+    @include('./partials/_subscription.html')
 
-        <br><br>
+    @include('./partials/_footer.html')
+  </div>
 
-        <button id="setCED" onclick="App.setCED()">setCED</button>
+  <!-- MODALS -->
+  @include('./partials/modals/stay-updated.html')
 
-        <button id="getlastCED" onclick="App.refreshBalance()"> Reload page getlastCED</button>
+  @include('./partials/modals/video.html')
 
-        <button id="getCEDByID" onclick="App.getCEDByID()"> getCEDByID</button>
+  @include('./partials/modals/email-verified.html')
 
-        <button id="getCEDByCID" onclick="App.getCEDByCID()"> getCEDByCID</button>
+  @include('./partials/modals/roadshow.html')
 
+  @include('./partials/modals/modalGallery.html')
+  <!-- END MODALS -->
 
-    </div>
+  <script src="https://www.gstatic.com/firebasejs/4.5.0/firebase.js"></script>
 
+  <!-- bower:js -->
+  <!-- only bower.js will be injected here -->
+  <!-- endinject -->
 
-
-
-
+  <!-- inject:js -->
+  <!-- the rest of the *.js files will be injected here -->
+  <!-- endinject -->
 </body>
 </html>

@@ -1,0 +1,875 @@
+.team-section {
+  background-image: linear-gradient(135deg, #FFFFFF 0%, #F0EEFA 69%, #E9E6F7 100%);
+  position: relative;
+  padding: 115px 0;
+  .linkedin-icon {
+    width: 16px;
+    height: 28px;
+    margin-left: 5px;
+    display: inline-block;
+    vertical-align: middle;
+    background: url(/images/linkedin-icon.svg) center no-repeat;
+  }
+  .investors-container {
+    .all-investors-list {
+      &:after {
+        content: '';
+        display: none;
+        width: 100%;
+        height: 50px;
+        z-index: 9;
+        position: absolute;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(244,243,251,0) 0%, #F4F3FB 100%);
+      }
+    }
+  }
+  .advisors-container {
+    margin-top: 50px;
+    .all-investors-list {
+      &:after {
+        content: '';
+        display: none;
+        width: 100%;
+        height: 50px;
+        z-index: 9;
+        position: absolute;
+        bottom: 0;
+        background: linear-gradient(to bottom, rgba(240,238,250,0) 0%, #F0EEFA 100%);
+      }
+    }
+  }
+
+  .all-investors {
+    margin-top: 30px;
+
+    &-list {
+      position: relative;
+      overflow: hidden;
+      .container {
+        position: relative;
+        max-height: 100%;
+      }
+
+      &-item {
+        margin-top: 40px;
+        &:not(:nth-child(5n+1)) {
+          margin-left: 20px;
+        }
+        .investor-img-wrapper {
+          border-radius: 8px;
+          overflow: hidden;
+          font-size: 0;
+          background: #fff;
+          padding-bottom: 100%;
+          height: 0;
+          position: relative;
+
+          img {
+            border-radius: 8px;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
+
+        .investor-content-wrapper {
+          margin-top: 20px;
+          font-size: 14px;
+          line-height: 24px;
+
+          .investor-name {
+            font-weight: bold;
+          }
+
+          .investor-position {
+            color: $color-blackLight;
+          }
+        }
+      }
+    }
+
+    .all-investors-action {
+      text-align: center;
+      font-size: 0;
+      display: none;
+      margin-top: 20px;
+      span {
+        font-size: 20px;
+        line-height: 28px;
+        font-weight: bold;
+        color: $color-purpleDark;
+        cursor: pointer;
+      }
+    }
+
+    &.animate {
+      .all-investors-list {
+        .container {
+          &::after {
+            opacity: 0;
+            height: 0;
+          }
+        }
+      }
+    }
+
+    &.closed {
+      .all-investors-list {
+        -webkit-mask-image: linear-gradient(to top, rgba(255, 255, 255, 0) 4%, rgba(255, 255, 255, 1) 40%);
+        height: 520px;
+        &:after {
+          display: block;
+        }
+
+        @include size(desktop-md) {
+          height: 490px;
+        }
+
+        @include size(desktop-sm) {
+          height: 475px;
+        }
+
+        .container {
+          &::after {
+            display: block;
+          }
+
+          .all-investors-list-item {
+            &:nth-child(n + 7) {
+              .investor-img-wrapper {
+                box-shadow: none;
+              }
+            }
+          }
+        }
+      }
+      .all-investors-action {
+        display: block;
+      }
+    }
+  }
+
+  .all-investors-list {
+    transition: all .3s ease-out;
+  }
+
+  .investors-container {
+    padding-top: 150px;
+    .investors-header-wrapper {
+      padding-top: 35px;
+      .investors-countries-wrapper {
+        margin-top: 70px;
+      }
+      .founds-raised {
+        .counter-img {
+          width: 70px;
+          height: 70px;
+          position: relative;
+          vertical-align: middle;
+          display: inline-block;
+          border-radius: 50%;
+          box-shadow: 0 14px 24px rgba(50, 49, 58, 0.1);
+          background: #F4F5F7 url(/images/about-icons/4.svg) center no-repeat;
+        }
+        .numbers-block {
+          vertical-align: middle;
+          margin-left: 30px;
+          display: inline-block;
+        }
+        &-value {
+          font-size: 40px;
+          line-height: 49px;
+          font-weight: bold;
+        }
+        &-label {
+          font-size: 16px;
+          line-height: 16px;
+        }
+      }
+
+      .investors-countries {
+        font-size: 24px;
+        line-height: 28px;
+        font-weight: bold;
+
+        &-list {
+          &:not(:first-of-type) {
+            margin-left: 20px;
+          }
+        }
+      }
+    }
+  }
+
+  .team-container {
+    .all-team-photo {
+      display: none;
+    }
+    .number-container {
+      .number {
+        font-size: 40px;
+        display: block;
+        font-weight: bold;
+      }
+      .text {
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
+    .big-team {
+      margin-top: 100px;
+      .image {
+        overflow: hidden;
+        border-radius: 8px;
+        img {
+          width: 100%;
+          display: block;
+        }
+      }
+      .name {
+        text-align: center;
+        margin-top: 30px;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 28px;
+      }
+      .position {
+        text-align: center;
+        font-size: 20px;
+        line-height: 28px;
+        margin-top: 5px;
+        color: $color-blackLight;
+      }
+      .description {
+        margin-top: 20px;
+        font-size: 16px;
+        line-height: 24px;
+        color: $color-blackLight;
+      }
+    }
+    .all-team-wrapper {
+      &.closed {
+        &.animate {
+          .all-team {
+            .container {
+              &::after {
+                opacity: 0;
+                height: 0;
+              }
+            }
+          }
+        }
+        .all-team {
+          overflow: hidden;
+          height: 404px;
+          -webkit-mask-image: linear-gradient(to top, rgba(255, 255, 255, 0) 4%, rgba(255, 255, 255, 1) 40%);
+
+          @include size(desktop-md) {
+            height: 410px;
+          }
+
+          @include size(desktop-lg) {
+            height: 440px;
+          }
+
+          &:after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 50px;
+            z-index: 9;
+            position: absolute;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(249,248,253,0) 0%, #F9F8FD 100%);
+          }
+          .container {
+            &::after {
+              display: block;
+            }
+            .one-person {
+              &:nth-child(n+7) {
+                .image {
+                  img {
+                    box-shadow: none;
+                  }
+                }
+              }
+              .image {
+                position: relative;
+                text-align: center;
+                &::before {
+                  content: "";
+                  display: block;
+                  padding-top: 100%;
+                }
+                img {
+                  position: absolute;
+                  top: 0;
+                  width: 100%;
+                }
+              }
+            }
+          }
+        }
+        .all-team-action {
+          display: block;
+          margin-top: 20px;
+        }
+      }
+      .all-team {
+        margin-top: 20px;
+        position: relative;
+        .container {
+          position: relative;
+          max-height: 100%;
+        }
+        .image {
+          border-radius: 8px;
+          overflow: hidden;
+          img {
+            display: block;
+          }
+        }
+        .one-person {
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+          margin-top: 30px;
+          .image {
+            flex-grow: 1;
+          }
+        }
+        .name {
+          margin-top: 20px;
+          font-weight: bold;
+          font-size: 16px;
+          line-height: 24px;
+        }
+        .position {
+          font-size: 16px;
+          line-height: 24px;
+          color: $color-blackLight;
+        }
+      }
+      .all-team-action {
+        display: none;
+        font-size: 0;
+        text-align: center;
+
+        .show-all-team {
+          color: $color-purpleDark;
+          font-size: 20px;
+          line-height: 28px;
+          cursor: pointer;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .roadshow-container {
+    margin-top: 150px;
+    .roadshow-component {
+      margin-top: 100px;
+      .roadshow-cities {
+        .roadshow-city {
+          display: inline-block;
+          padding: 11px 30px;
+          margin-left: -30px;
+          border-radius: 26px;
+          color: $purple-active;
+          font-size: 20px;
+          line-height: 28px;
+          cursor: pointer;
+          position: relative;
+          user-select: none;
+          &.active {
+            color: #fff;
+            background: #7B53C1;
+          }
+          &:not(.active):hover {
+            &::after {
+              content: "";
+              display: block;
+              position: absolute;
+              left: 30px;
+              width: calc(100% - 60px);
+              bottom: 11px;
+              border-bottom: 1px solid $purple-active;
+            }
+          }
+        }
+      }
+      .roadshow-events {
+        display: none;
+        background: #fff;
+        padding: 80px 100px;
+        border-radius: 8px;
+        overflow: hidden;
+        position: relative;
+        &::before {
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          border-left: 8px solid $purple-active;
+          border-top-left-radius: 8px;
+          border-bottom-left-radius: 8px;
+        }
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 0;
+          height: 100%;
+          width: 100%;
+          background: url(/images/cubes.png) no-repeat right;
+          background-size: contain;
+          z-index: 0;
+        }
+        &.multiple {
+          &::after {
+            opacity: .5;
+          }
+        }
+        &.active {
+          display: block;
+        }
+        .roadshow-event {
+          position: relative;
+          z-index: 1;
+          min-height: 195px;
+          &-name {
+            font-size: 24px;
+            line-height: 28px;
+            font-weight: bold;
+            padding-bottom: 14px;
+            position: relative;
+            &::after {
+              content: "";
+              display: block;
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              height: 4px;
+              width: 26px;
+              background: $color-black;
+            }
+          }
+          &-place {
+            font-size: 20px;
+            line-height: 28px;
+            color: $color-blackLight;
+            margin-top: 30px;
+          }
+          &-date {
+            font-size: 20px;
+            line-height: 28px;
+            color: $color-blackLight;
+          }
+          &-link {
+            font-size: 20px;
+            line-height: 28px;
+            margin-top: 10px;
+            color: $purple-active;
+            display: inline-block;
+            transition: .2s ease-out;
+            border-bottom: 1px solid transparent;
+            &:hover, &:active {
+              border-bottom: 1px solid $purple-active;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .partners-container {
+    margin-top: 50px;
+
+    .all-partners {
+      margin-top: 70px;
+
+      .partners-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        &-item {
+          flex: 0 0 26%;
+
+          &:nth-child(n + 4) {
+            margin-top: 50px;
+          }
+
+          .partner-logo {
+            border-radius: 8px;
+            font-size: 0;
+            overflow: hidden;
+            max-width: 260px;
+            margin: 0 auto;
+          }
+
+          .partner-info {
+            margin: 24px auto 0;
+            max-width: 260px;
+
+            &-name {
+              font-size: 16px;
+              line-height: 22px;
+              font-weight: bold;
+            }
+
+            &-description {
+              font-size: 14px;
+              line-height: 20px;
+              color: $color-blackLight;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+#modalGallery {
+  .iziModal-content, .iziModal-wrap {
+    height: 100% !important;
+  }
+}
+.roadshow-gallery {
+  overflow: hidden;
+  margin-top: 100px;
+  position: relative;
+}
+.slider {
+  &.modal-slider {
+    height: 100%;
+    margin-top: 0;
+    .slick-list, .slick-track, .slick-slide {
+      height: 100%;
+    }
+    .slick-slide {
+      min-width: 100vw !important;
+      & > div {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        max-height: 80%;
+        height: 100%;
+        & > div {
+          height: 100%;
+        }
+      }
+    }
+    img {
+      height: 100%;
+      max-height: 100%;
+      margin: 0 auto;
+    }
+    .slick-track {
+      min-width: 100vw !important;
+    }
+    .slick-prev {
+      left: 100px;
+    }
+    .slick-next {
+      right: 100px;
+    }
+  }
+  &:not(.modal-slider) {
+    cursor: pointer;
+    img {
+      width: 100%;
+      border-radius: 0;
+    }
+    .slick-slide {
+      cursor: pointer;
+      margin: 0 11px;
+      @include size(desktop-sm) {
+        width: calc(1180px / 3 - 22px);
+      }
+  
+      @include size(desktop-md) {
+        width: calc(1260px / 3 - 22px);
+      }
+  
+      @include size(desktop-lg) {
+        width: calc(1380px / 3 - 22px);
+      }
+    }
+    .slick-track {
+      cursor: default;
+      //margin-left: -11px;
+    }
+    .slick-list {
+      overflow: visible;
+    }
+  }
+  &.simple-slider {
+    position: static;
+  }
+  img {
+    border-radius: 8px;
+    outline: none;
+  }
+  .slick-slide {
+    outline: none;
+  }
+  .slick-prev, .slick-next {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    font-size: 0;
+    position: absolute;
+    top: 50%;
+    background: transparent;
+    transform: translateY(-50%);
+    transition: all .3s ease-out;
+    z-index: 9;
+    display: block;
+    border: none;
+    outline: none;
+    &:hover {
+      &::after {
+        opacity: 0;
+      }
+      &::before {
+        opacity: 1;
+      }
+    }
+    &::after, &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: opacity .2s ease;
+    }
+    &::after {
+      opacity: 1;
+      background: url('/images/next-gallery.svg') bottom center no-repeat;
+    }
+    &::before {
+      opacity: 0;
+      background: url('/images/next-gallery.svg') top center no-repeat;
+    }
+    &.slick-disabled {
+      opacity: 0;
+      pointer-events: none;
+    }
+  }
+  .slick-prev {
+    left: 20px;
+    &::after, &::before {
+      transform: rotate(180deg);
+    }
+  }
+  .slick-next {
+    right: 20px;
+  }
+}
+
+@media ($mobile) {
+  .slider {
+    display: none;
+  }
+  .team-section {
+    padding: 50px 0;
+    .partners-container {
+      .all-partners {
+        .partners-list {
+          &-item {
+            flex: 0 0 auto;
+            width: 50%;
+            padding: 0 3px;
+            &:nth-child(n + 4) {
+              margin-top: 0;
+            }
+            &:nth-child(n + 3) {
+              margin-top: 6px;
+            }
+            .partner-info {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .roadshow-container {
+      margin-top: 50px;
+      .roadshow-component {
+        margin-top: 22px;
+        .roadshow-cities {
+          .roadshow-city {
+            padding: 0;
+            margin-left: 0;
+            font-size: 16px;
+            line-height: 28px;
+            margin-top: 10px;
+            &.active {
+              background: none;
+              color: $purple-active;
+            }
+            &:not(.active):hover {
+              &::after {
+                display: none;
+              }
+            }
+          }
+        }
+        .roadshow-events {
+          &.active {
+            display: none;
+          }
+        }
+      }
+    }
+    .team-container {
+      .all-team-photo {
+        width: 100%;
+        display: block;
+        margin-top: 55px;
+      }
+      .number-container {
+        display: flex;
+        align-items: center;
+        margin-top: 5px;
+        &:first-of-type {
+          margin-top: 30px;
+        }
+        .number {
+          line-height: 28px;
+          font-size: 20px;
+          flex: 0 0 20%;
+        }
+        .text {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+      .big-team {
+        margin-top: 50px;
+        & > .row > div {
+          &:not(:first-of-type) {
+            margin-top: 30px;
+          }
+        }
+        img {
+          width: 100%;
+        }
+        .name {
+          margin-top: 15px;
+          font-size: 20px;
+          line-height: 28px;
+        }
+        .position, .description {
+          margin-top: 10px;
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+      .all-team-action {
+        display: none !important;
+      }
+      .all-team {
+        display: none;
+      }
+    }
+    .all-investors {
+      &-list {
+        &-item {
+          &:not(:first-of-type) {
+            margin-left: 0;
+          }
+          margin-top: 30px;
+          .investor-img-wrapper {
+            width: calc(100% / 6 * 4);
+            margin: 0 auto;
+            padding-bottom: 66.5%;
+          }
+          .investor-content-wrapper {
+            margin-top: 15px;
+            text-align: center;
+            .investor-position {
+              font-size: 12px;
+              line-height: 15px;
+            }
+          }
+        }
+      }
+    }
+    .investors-container {
+      padding-top: 50px;
+      .investors-header-wrapper {
+        padding-top: 0;
+        .founds-raised {
+          .numbers-block {
+            margin-left: 20px;
+            &-value {
+              font-size: 20px;
+              line-height: 28px;
+            }
+            &-label {
+              font-size: 16px;
+              line-height: 22px;
+            }
+          }
+        }
+        .investors-countries {
+          margin-top: 30px;
+          &-list-item {
+            font-size: 20px;
+            line-height: 28px;
+          }
+          &:last-of-type {
+            margin-top: 0;
+            display: block;
+          }
+        }
+        .investors-countries-wrapper {
+          margin-top: 0;
+          padding-top: 140px;
+          position: relative;
+          &::before {
+            content: "";
+            display: block;
+            background: url(/images/map.png) top 16px center no-repeat;
+            background-size: contain;
+            height: 50%;
+            width: 100%;
+            top: 0;
+            position: absolute;
+          }
+          & > div {
+            position: relative;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media ($desktop) {
+  .team-section {
+    .partners-container {
+      padding-top: 150px;
+    }
+    .advisors-container {
+      margin-top: 150px;
+    }
+    .investors-container {
+      .investors-header-wrapper {
+        min-height: 345px;
+        background: url(/images/map.png) no-repeat 98.5% center;
+        background-size: 589px;
+      }
+    }
+  }
+}

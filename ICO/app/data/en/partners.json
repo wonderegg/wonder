@@ -1,0 +1,42 @@
+{
+  "title": "Partners",
+  "description": "Over the past several years we have established long-lasting&nbsp;<br class=\"desktop-only\"> partnerships with the leading companies in the blockchain,&nbsp;<br class=\"desktop-only\"> real estate, legal, and tech space to make our product&nbsp;<br class=\"desktop-only\"> offering even more appealing.",
+  "items": [
+    {
+      "src": "/images/partners/3.jpg",
+      "srcset": "/images/partners/3@2x.jpg 2x",
+      "name": "Cryptonomos",
+      "description": "Book building platform focused exclusively on cryptocurrency projects"
+    },
+    {
+      "src": "/images/partners/5.jpg",
+      "srcset": "/images/partners/5@2x.jpg 2x",
+      "name": "Melrose PR",
+      "description": "International PR Firm with deep blockchain expertise"
+    },
+    {
+      "src": "/images/partners/1.jpg",
+      "srcset": "/images/partners/1@2x.jpg 2x",
+      "name": "Applied Blockchain",
+      "description": "Distributed ledger technology and smart contracts developer"
+    },
+    {
+      "src": "/images/partners/7.jpg",
+      "srcset": "/images/partners/7@2x.jpg 2x",
+      "name": "Idology",
+      "description": "Identity Verification Provider"
+    },
+    {
+      "src": "/images/partners/9.jpg",
+      "srcset": "/images/partners/9@2x.jpg 2x",
+      "name": "HelloSign",
+      "description": "A Cloud-Based Electronic Signature Tool"
+    },
+    {
+      "src": "/images/partners/11.jpg",
+      "srcset": "/images/partners/11@2x.jpg 2x",
+      "name": "Move Inc.",
+      "description": "Subsidiary of News Corporation,  Owner of Realtor.com"
+    }
+  ]
+}

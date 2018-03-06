@@ -1,0 +1,68 @@
+{
+  "title": "Token Sale",
+  "items": [
+    {
+      "title": "What is&nbsp;<br>Rentberry Token",
+      "description": "Rentberry Token is our proprietary cryptocurrency designed to create cross-border standards of rental process and keep all rental transactions as secure as possible."
+    },
+    {
+      "title": "Name",
+      "description": "BERRY"
+    },
+    {
+      "title": "Fixed Limit",
+      "description": "100,000 ETH"
+    },
+    {
+      "title": "Exchange",
+      "description": "1 ETH = 1,400 BERRY"
+    },
+    {
+      "title": "Currency",
+      "description": "ETH, BTC"
+    },
+    {
+      "title": "Min/Max Purchase",
+      "description": "0.1 ETH / 30,000 ETH"
+    },
+    {
+      "title": "Starts",
+      "description": "November 20th (9AM EST, 3PM CET, 9PM HKT)"
+    }
+  ],
+  "bonus": {
+    "title": "Discount",
+    "discount": "Discount",
+    "items": [
+      {
+        "title": "24 hours",
+        "id": "12-month"
+      },
+      {
+        "title": "2-3 days",
+        "id": "9-month"
+      },
+      {
+        "title": "3-7 days",
+        "id": "6-month"
+      },
+      {
+        "title": "7-15 days",
+        "id": "3-month"
+      },
+      {
+        "title": "15+ days",
+        "id": "1-month"
+      }
+    ]
+  },
+  "extraBonus": {
+    "title": "Extra Bonus",
+    "image": {
+      "alt": "Extra Bonus",
+      "src": "/images/extra_bonus.png",
+      "srcset": "/images/extra_bonus@2x.png 2x"
+    },
+    "description": "All ICO participants become part of Exclusive Rentberry Club"
+  }
+}
