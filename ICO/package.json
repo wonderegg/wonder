@@ -1,8 +1,8 @@
 {
-  "name": "rentberry-ico",
+  "name": "wonderegg-ico",
   "version": "0.0.1",
-  "description": "Rentberry ICO",
-  "repository": "https://github.com/Rentberry/ico-promo",
+  "description": "wonderegg ICO",
+  "repository": "https://github.com/wonderegg/wonder/ico",
   "private": true,
   "scripts": {
     "start": "gulp",
