@@ -1,7 +1,7 @@
 (function() {
 "use strict";
 
-angular.module("dashboard.help", [])
+angular.module("wonderEgg.help", [])
     .component("help", {
         templateUrl: "js/components/help/help.html"
     });

@@ -1,7 +1,7 @@
 (function() {
     "use strict";
     
-    angular.module("dashboard.main", [])
+    angular.module("wonderEgg.main", [])
         .component("main", {
             templateUrl: "js/components/main/main.html"
         })
@@ -123,6 +123,7 @@
                 if(result)
                     {
                         var icase = result[4];
+                        console.log("icase>>> ", icase);
                         switch (icase) {
                                 case '1':
                                     text = "I believe the world is flat. My great-great-great-great-great-great grandkitty lived with Confucius. I think you'll love me beclaws I have cattitude.";
@@ -152,7 +153,8 @@
             
                         }
                         else{
-                          outtext = outtext + '<hr>'+' Wonder Egg ID: '+ result[1]+ ' name:' + web3.toAscii(result[3]) + ' descriptionID: '+ icase+ '<img id="'+icase+'" width="100%" src="./assets/img/'+icase+'.jpg"> '+' (Price: '+result[2]/sellrate+' ether)';
+                            console.log("icase>>> ", icase);
+                            outtext = outtext + '<hr>'+' Wonder Egg ID: '+ result[1]+ ' name:' + web3.toAscii(result[3]) + ' descriptionID: '+ icase+ '<div width="100%"><img id="'+icase+'" width="33%" src="./assets/img/'+icase+'.svg"><img id="'+icase+'" width="33%" src="./assets/img/'+icase+'.svg"><img id="'+icase+'" width="33%" src="./assets/img/'+icase+'.svg"></div> '+' (Price: '+result[2]/sellrate+' ether)';
                         console.log("refresh get last nameid: " + outtext);
                         }
                         

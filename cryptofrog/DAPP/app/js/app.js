@@ -1,12 +1,12 @@
 (function(){
   "use strict";
   
-  angular.module("dashboard", [
+  angular.module("wonderEgg", [
     "ngRoute",
-    "dashboard.main",
-    "dashboard.marketplace",
-    "dashboard.help",
-    "dashboard.admin"
+    "wonderEgg.main",
+    "wonderEgg.marketplace",
+    "wonderEgg.help",
+    "wonderEgg.admin"
     ])
     
     .config(function($routeProvider, $locationProvider) {

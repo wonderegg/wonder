@@ -1,7 +1,7 @@
 (function() {
 "use strict";
 
-	angular.module("dashboard.marketplace", [])
+	angular.module("wonderEgg.marketplace", [])
 	    .component("marketplace", {
 	        templateUrl: "js/components/market/marketplace.html"
 	    })
@@ -153,11 +153,13 @@
             
                         }
                         else{
-                          outtext = outtext + '<hr>'+' Wonder Egg ID: '+ result[1]+ ' name:' + web3.toAscii(result[3]) + ' descriptionID: '+ icase+ '<img id="'+icase+'" width="100%" src="./assets/img/'+icase+'.jpg"> '+' (Price: '+result[2]/sellrate+' ether)';
-                        console.log("refresh get last nameid: " + outtext);
+                          //for(var z=0; z < 5; z++){
+                            outtext = outtext + '<div class="image-icon flex-container"><a href="#">'+'<img id="'+icase+'" width="100%" flex-wrap: wrap;display: flex; src="./assets/img/'+icase+'.jpg"></a><div><div style="word-wrap: break-word;">' + web3.toAscii(result[3]) + ': '+ result[1] + '</div><div style="word-wrap: break-word;">(Price: '+result[2]/sellrate+' ether)</div></div></div>';
+                            console.log("refresh get last nameid: " + outtext);
+                          //}  
                         }
                         
-                $("#countIns").html(output+outtext);
+                $("#countIns").html(output+'<div style="flex-wrap: wrap;display: flex;">'+outtext+'</div>');
                     }
                 else{
                     $("#loader").hide();

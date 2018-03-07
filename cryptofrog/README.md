@@ -1,41 +1,43 @@
 # Team mumbers:
 
-## role: graphic designer,solidty developer,webpage developer,PM,Architect
 
- # Projective
+# Projective
 Ideas of using Ethereum Smart Contract project
 1. Tracking credit of training program
 2. create digital surprising eggs -- which my daughters love most :) . Tracking dinasour/Ester/surprise eggs generation, dinasour breeding on DAPP
 
 # Reference information
-Logon website : http://cryptofrog.co and choose Ropsten metamask Ethereum test network, you can create/purchase for free on new Wonder eggs now!
+Logon website : http://lemonthy.ca and choose Ropsten metamask Ethereum test network, you can create/purchase for free on new Wonder eggs now!
 
 
-step for setup test enviroment for contracts.
+## step for setup test enviroment for contracts.
 
-prerequest:
-for Install & run TestRPC: $ npm install -g ethereumjs-testrpc
-$ testrpc
-for Install Truffle: $ npm install –g truffle
-$ mkdir TruffleTestProject
-$ cd TruffleTestProject
+## prerequest:
+* for Install & run TestRPC: $ npm install -g ethereumjs-testrpc
+* $ testrpc
+* for Install Truffle: $ npm install –g truffle
+* $ mkdir TruffleTestProject
+* $ cd TruffleTestProject
+* truffle unbox webpack
+* npm install -g gulp bower (if you first time install gulp with -g, after this step you may want to exit cmd and reopen cmd to make path work with gulp)
+* clone or download Github
+* unzip the downloade github and copy contracts folder , app folder to TruffleTestProject and overwrite
+* cd contracts
+* truffle compile
+* truffle migrate
+* open testrpc or geth console in new window
+* in new window type : npm run dev
+* open localhost:8080 base on npm run dev
+* npm run build
+* npm install gulp bower
+* gulp          
+* gulp watch
+* gulp will launch a browser window that opens the dashboard, alternatively it will be accessible at http://localhost:8000/
 
-1. clone or download Github
-2. unzip the downloade github and copy contracts folder , dapp folder index.html to ./app/ folder, copy js css pic folder to ./ folder
-3. create new folder wonder
-4. truffle unbox webpack
-4. cd contracts
-5. truffle compile
-7. copy to overwrite or modify webpack.config.js from: './app/index.html' as from: './index.html'
-8. copy to overwrite or modify modify truffle.js as port: 8545
-9. opne testrpc or geth console in new window
-10. in new window type : npm run dev
-11. open localhost:8080 base on npm run dev
 
+## step for create or purchase a new wonder egg puppy on block chain network:
 
-step for create or purchase a new wonder egg puppy on block chain network:
-
-Logon website : http://cryptofrog.co and choose Ropsten metamask Ethereum test network, you can create/purchase for free on new Wonder eggs now!
+Logon website : http://lemonthy.ca and choose Ropsten metamask Ethereum test network, you can create/purchase for free on new Wonder eggs now!
 1. open chrome and intall metamask.
 Wanna play?
 You’ll need a safe place to store all of your adorable wonder egg puppies! The perfect place is in a secure wallet like MetaMask. This will also act as your login to the game (no extra password needed).
@@ -43,7 +45,7 @@ Install MetaMask
 you will need to install MetaMask, a digital wallet. You will need to put money in it to make your first purchase.
 Note: A digital wallet like MetaMask acts like a bank account—treat it with respect and make sure you don’t forget your password or the seed words.
 Occasionally the metemask page displays a lock screen. This happens because MetaMask locks your account after a certain period of time automatically. To unlock simply click on the MetaMask extension and type in your password.
-2. open http://cryptofrog.co and choose Ropsten metamask Ethereum test network on metamask, you can create/purchase for free on new Wonder eggs for free now! 
+2. open http://lemonthy.ca and choose Ropsten metamask Ethereum test network on metamask, you can create/purchase for free on new Wonder eggs for free now! 
  
  
 

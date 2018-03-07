@@ -30,7 +30,7 @@ button1 {
 }
 
 #instructor {
-    padding:1em;
+    /* padding:1em; */
     background-color:#fff;
     margin: 1em 0;
 }
@@ -43,3 +43,24 @@ button1 {
 .Header-navigation-active{
     color: #e96bd4 !important;
 }
+
+.flex-container {
+    /* display: flex; */
+    flex-direction: row;
+    background-color: #EEE9E8;
+  }
+
+.image-icon{
+    width: 22%;
+    margin: 10px;
+    font-size: 15px;
+    padding: 10px 10px;
+    text-align:center;
+   /*  display:inline-block;
+    padding: 10px 10px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    background-color:#EEE9E8; */
+    border-radius: 1rem;
+}
+

@@ -132,7 +132,7 @@ gulp.task('images', function () {
 gulp.task('template', function () {
   return gulp.src(['app/js/**/*.html'])
     .pipe(templateCache({
-      module: "dashboard",
+      module: "wonderEgg",
       transformUrl: function (url) {
         return "js/" + url;
       }
@@ -183,7 +183,7 @@ gulp.task("copyoffline", ["default"], function () {
         (function() {
           var _OFFLINE_DATA = %s;
 
-          angular.module("dashboard.query-service", [])
+          angular.module("wonderEgg.query-service", [])
               .factory("queryService", [ "$q", function($q) {
                 function getOfflineData(key) {
                   return $q(function(resolve, reject) {
@@ -227,7 +227,7 @@ gulp.task("watch-common", function () {
   watching = true;
 
   // Watch .scss files
-  gulp.watch(['app/assets/**/*.scss', 'app/js/**/*.scss'], ['styles']);
+  gulp.watch(['app/assets/**/*.css', 'app/js/**/*.css'], ['styles']);
   // Watch .js files
   gulp.watch(['app/js/**/*.js', "app/js/**/*.html"], ['scripts']);
   // Watch image files
@@ -253,7 +253,7 @@ gulp.task('watch', [ "watch-common" ], function () {
 gulp.task('watch-d1h', [ "watch-common" ], function () {
   var proxy = require('proxy-middleware');
 
-  var servicesProxyOpts = url.parse("http://hansbxcgy000.network.sbx:8080/suncor/sam/app/manager/manager1/dashboard/services");
+  var servicesProxyOpts = url.parse("http://hansbxcgy000.network.sbx:8080/suncor/sam/app/manager/manager1/wonderEgg/services");
   servicesProxyOpts.route = "/services";
 
   var sapProxyOpts = url.parse("http://hansbxcgy000.network.sbx:8080/sap");
