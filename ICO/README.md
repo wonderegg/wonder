@@ -24,6 +24,7 @@ npm install -g generator-smacss
 **Clone the repo & cd into it**
 
 ```
+npm --add-python-to-path='true' --debug install --global windows-build-tools
 npm install
 
 bower install
