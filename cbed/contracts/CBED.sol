@@ -90,9 +90,15 @@ contract CBED {
     /* function getlastCBED() for getting the last certified developer cert in the CBED blockchain */
 	function getlastCBED( ) view public returns (uint256 _id, string _cid, string _fullname,string _coursename,string _issuedOn,string _validUntil) {
 		return (CED.id, CED.cid,CED.fullname,CED.coursename,CED.issuedOn, CED.validUntil );
-
 	}
 
+
+    /* function getCBED() for getting the list of certificated ethereum developers 
+	function getCBED() view public returns (uint256 , string , string ,string ,string ,string ) {
+	  for (uint256 i = 0; i < CBEDStructArray.length ; i++) {
+	      return (CBEDStructArray[i].id, CBEDStructArray[i].cid,CBEDStructArray[i].fullname,CBEDStructArray[i].coursename,CBEDStructArray[i].issuedOn, CBEDStructArray[i].validUntil);	      
+	  }    
+	}*/
 
 
 }

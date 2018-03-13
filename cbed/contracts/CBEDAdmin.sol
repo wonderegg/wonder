@@ -70,7 +70,7 @@ contract CBEDAdmin is CBED {
 
 
     /* function setCBED() will be for admin only  */
-    function setCBED(string _cid, string _fullname,string _coursename,string _issuedOn,string _validUntil,string _adminPassword) onlyAdmin(msg.sender, _adminPassword)  public {
+    function setCBED(string _cid, string _fullname,string _coursename,string _issuedOn,string _validUntil,string _adminPassword) onlyAdmin(msg.sender, _adminPassword)  public  returns ( bool ) {
       CEDID += 1;
       CED.id = CEDID;
       CED.cid = _cid;
@@ -79,46 +79,61 @@ contract CBEDAdmin is CBED {
       CED.issuedOn = _issuedOn;
       CED.validUntil = _validUntil;      
       CBEDStructArray.push(CED) -1;
+      return true;
     }
   
 
     /* function addcEDAdmin() for owner only */
-    function addcEDAdmin(string _adminFullname,bool _adminPermitStatus,address _adminAddress,string _adminPassword ) onlyOwner public {
-        cEDAdminID += 1;
-        cEDAdmin.adminId = cEDAdminID;
-        cEDAdmin.fullname = _adminFullname;
-        //var currentTimestamp = now;           
-        cEDAdmin.adminPermitStatus = _adminPermitStatus;  //default is true  
-        cEDAdmin.adminAddress = _adminAddress;
-        cEDAdmin.adminPassword = _adminPassword;
-        cEDAdminStructArray.push(cEDAdmin) -1;
+    function addcEDAdmin(string _adminFullname,bool _adminPermitStatus,address _adminAddress,string _adminPassword ) onlyOwner public  returns ( bool ) {
+      cEDAdminID += 1;
+      cEDAdmin.adminId = cEDAdminID;
+      cEDAdmin.fullname = _adminFullname;
+      //var currentTimestamp = now;           
+      cEDAdmin.adminPermitStatus = _adminPermitStatus;    
+      cEDAdmin.adminAddress = _adminAddress;
+      cEDAdmin.adminPassword = _adminPassword;
+      cEDAdminStructArray.push(cEDAdmin) -1;
+      return true;        
     }
 
 
     /* function activecEDAdminByAdminID() for owner only */
-    function activecEDAdminByAdminID(string _adminId ) onlyOwner public {        
-      //find admin and set adminPermitStatus = true for the admin (will add steps for active)
-      bool isAdminPermitStatus = true;
-      _adminId ="";
-      
+    function activecEDAdminByAdminID(uint256 _adminId ) onlyOwner public returns ( bool ) {        
+      //find admin and set adminPermitStatus = true for the admin 
+      for (uint256 i = 0; i < cEDAdminStructArray.length ; i++) {
+          if ( _adminId==cEDAdminStructArray[i].adminId ) {      
+              cEDAdminStructArray[i].adminPermitStatus = true;
+              //set successful 
+              return true;                        
+          }
+      }
+      //not find and failed
+      return false;      
     }
 
 
     /* function deactivecEDAdminByAdminID() for owner only */
-    function deactivecEDAdminByAdminID(string _adminId ) onlyOwner public {        
-      //find admin and set adminPermitStatus = false for the admin (will add steps for deactive)
-      bool isAdminPermitStatus = false;      
-      _adminId ="";     
-      
+    function deactivecEDAdminByAdminID(uint256 _adminId ) onlyOwner public  returns ( bool ) {        
+      //find admin and set adminPermitStatus = false for the admin     
+      for (uint256 i = 0; i < cEDAdminStructArray.length ; i++) {
+          if ( _adminId==cEDAdminStructArray[i].adminId ) {      
+              cEDAdminStructArray[i].adminPermitStatus = false;
+              //deactivate successful
+              return true;                        
+          }
+      }
+      //not find and failed      
+      return false;       
     }
 
 
-    /* function deletecEDAdminByAdminID() for owner only */
-    function deletecEDAdminByAdminID(string _adminId ) onlyOwner public {        
+    /* function deletecEDAdminByAdminID() for owner only 
+    function deletecEDAdminByAdminID(uint256 _adminId ) onlyOwner public  returns ( bool ){        
       //find admin and delete it (will add steps for searching and deleting)
-      _adminId ="";      
+      _adminId =123;
+      return true;
 
-    }
+    }*/
 
 
     /* function resetcEDAdminPasswordByAdminAddress() for owner only */
@@ -129,6 +144,7 @@ contract CBEDAdmin is CBED {
           if ( _adminAddress==cEDAdminStructArray[i].adminAddress ) {
             cEDAdminStructArray[i].adminPassword = _adminPassword;
             isReset = true;
+            return isReset;
           }
         }
         return isReset;        
