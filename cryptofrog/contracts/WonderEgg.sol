@@ -8,7 +8,7 @@ contract WonderEgg is WonderToken{
     address addr;
     uint256 id;
     uint256 wprice;
-    uint256 idName;
+    bytes32 idName;
     uint256 Description;
   } 
 
@@ -24,7 +24,7 @@ contract WonderEgg is WonderToken{
         address addr,
         uint256 id,
         uint256 wprice,
-        uint256 idName,
+        bytes32 idName,
         uint256 Description
     ) ;
     
@@ -32,7 +32,7 @@ contract WonderEgg is WonderToken{
         owner = msg.sender;
     }
     
-    function setWonderStruct(address _address, uint256 _wprice, uint256 _idName, uint256 _Description) public {
+    function setWonderStruct(address _address, uint256 _wprice, bytes32 _idName, uint256 _Description) public {
 
         wonder = wonders[_address];
         wonderID += 1;
@@ -53,11 +53,11 @@ contract WonderEgg is WonderToken{
             return (wonderAddressArray); 
     }
 
-    function getWonderStructByID(uint256 i) view public returns (address, uint256 , uint256 , uint256 , uint256) {
+    function getWonderStructByID(uint256 i) view public returns (address, uint256 , uint256 , bytes32 , uint256) {
       return (WonderStructArray[i].addr,WonderStructArray[i].id, WonderStructArray[i].wprice, WonderStructArray[i].idName, WonderStructArray[i].Description);
     }
 
-    function getWonderStructByAddress(uint256 i, address ins) view public returns (address, uint256 , uint256 , uint256 , uint256) {
+    function getWonderStructByAddress(uint256 i, address ins) view public returns (address, uint256 , uint256 , bytes32 , uint256) {
 
         if (ins == WonderStructArray[i].addr){
             return (WonderStructArray[i].addr,WonderStructArray[i].id, WonderStructArray[i].wprice, WonderStructArray[i].idName, WonderStructArray[i].Description);
@@ -66,7 +66,7 @@ contract WonderEgg is WonderToken{
     }
 
 
-    function getlastWonderStruct() view public returns (address, uint256 , uint256 , uint256 , uint256) {
+    function getlastWonderStruct() view public returns (address, uint256 , uint256 , bytes32 , uint256) {
             return (wonder.addr,wonder.id,wonder.wprice,wonder.idName,wonder.Description  );
     }
 

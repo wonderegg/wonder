@@ -1,2 +1,0 @@
-# WonderEggs
-WonderEggs
