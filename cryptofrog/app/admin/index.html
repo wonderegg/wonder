@@ -32,20 +32,19 @@
 
    
 
-<div class="container">
+    <div class="container">
 
-    <label for="sellPriceRate" class="col-lg-2 control-label">onwer set sell Price Rate</label>
-    <input id="sellPriceRate" type="text">
+        <img id="loader" src="https://loading.io/spinners/double-ring/lg.double-ring-spinner.gif">
+        <label for="sellPriceRate" class="col-lg-2 control-label">onwer set sell Price Rate</label>
+        <input id="sellPriceRate" type="text">
 
-    <label for="buyPriceRate" class="col-lg-2 control-label">onwer set buy Price Rate</label>
-    <input id="buyPriceRate" type="text">
+        <label for="buyPriceRate" class="col-lg-2 control-label">onwer set buy Price Rate</label>
+        <input id="buyPriceRate" type="text">
 
+        <button id="setPrice" onclick="App.setPrice()">Set Sell/Buy Price Rate</button>
+        <button id="refresh" onclick="App.refreshBalance()"> Reload page refresh</button>
 
-    <button id="button2">Owner set buy/sell price rate(only for contract owner setting purpose, others can not run)</button>
-
-    <button id="button3">Reload page</button>
-
-</div>
+    </div>
 
 
 

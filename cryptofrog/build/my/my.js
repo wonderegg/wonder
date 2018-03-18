@@ -43456,8 +43456,8 @@ var account;
 var sellrate =1;
 var buyrate =1;
 
-        var wondereggContract ;
-        var Coursetro ;
+var wondereggContract ;
+var weggs ;
             
 
 window.App = {
@@ -43497,10 +43497,10 @@ window.App = {
   refreshBalance: function() {
     var self = this;
     $("#loader").show();
-    var cert;
+    var wegga;
     WonderEgg.deployed().then(function(instance) {
-      cert = instance;
-      return cert.getPrices();
+      wegga = instance;
+      return wegga.getPrices();
     }).then(function(result){   // sellrate,buyrate
         if(result)
             {
@@ -43522,8 +43522,8 @@ window.App = {
 
     var outtext;
     WonderEgg.deployed().then(function(instance) {
-      cert = instance;
-      return cert.getlastWonderStruct({from: account});
+      wegga = instance;
+      return wegga.getlastWonderStruct({from: account});
     }).then(function(result){   // wonder.addr,wonder.id,wonder.wprice,wonder.idName,wonder.Description
         var text = 'test';
         if(result)
@@ -43571,19 +43571,19 @@ window.App = {
 
     var count ;
     var output ;
-    //var cert;
+    //var wegga;
 
     WonderEgg.deployed().then(function(instance) {
-      cert = instance;
-    wondereggContract = web3.eth.contract(cert.abi);
-    Coursetro = wondereggContract.at(cert.address);
-      return cert.countWonderStructs();
+      wegga = instance;
+    wondereggContract = web3.eth.contract(wegga.abi);
+    weggs = wondereggContract.at(wegga.address);
+      return wegga.countWonderStructs();
     }).then(function(result ){  
       if (result) {
         count = result.c;
         output =count + ' total Wonder Eggs.  only your create/purchsed wonder egg will show here with pictures, below is one Youngest born wonder egg example FYI <hr>';
         for (var i = 0; i < count; i++) {
-           Coursetro.getWonderStructByAddress(i, web3.eth.defaultAccount, function(error, result){
+           weggs.getWonderStructByAddress(i, web3.eth.defaultAccount, function(error, result){
             var text = '';
             if(result)
                 {
@@ -43638,12 +43638,12 @@ window.App = {
   },
 
 
-  setCED: function() {
+  setWonderEgg: function() {
     var self = this;
-    var cert;
+    var wegga;
     WonderEgg.deployed().then(function(instance) {
-      cert = instance;
-      return cert.setWonderStruct(web3.eth.defaultAccount, $("#age").val()*sellrate, $("#idName").val(), $("#lDescription").val(),{from: account});
+      wegga = instance;
+      return wegga.setWonderStruct(web3.eth.defaultAccount, $("#age").val()*sellrate, $("#idName").val(), $("#lDescription").val(),{from: account});
     }).then(function(result ){   
                 if(result)
                     {
@@ -43665,10 +43665,10 @@ window.App = {
 
   eventwonderInfo: function() {
     var self = this;
-    var cert;
+    var wegga;
     WonderEgg.deployed().then(function(instance) {
-      cert = instance;
-      return cert.wonderInfo({}, 'latest',{from: account});
+      wegga = instance;
+      return wegga.wonderInfo({}, 'latest',{from: account});
     }).then(function(result ){   
         var text = 'test';
         if(result)
@@ -43716,13 +43716,13 @@ window.App = {
 };
 
 window.addEventListener('load', function() {
-  // Checking if Web3 has been injected by the browser (Mist/certMask)
+  // Checking if Web3 has been injected by the browser (Mist/weggaMask)
   if (typeof web3 !== 'undefined') {
-    console.warn("Using web3 detected from external source. If you find that your accounts don't appear or you have 0 WonderEgg, ensure you've configured that source properly. If using certMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-certmask")
-    // Use Mist/certMask's provider
+    console.warn("Using web3 detected from external source. If you find that your accounts don't appear or you have 0 WonderEgg, ensure you've configured that source properly. If using weggaMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-weggamask")
+    // Use Mist/weggaMask's provider
     window.web3 = new __WEBPACK_IMPORTED_MODULE_0_web3___default.a(web3.currentProvider);
   } else {
-    console.warn("No web3 detected. Falling back to http://127.0.0.1:8545. You should remove this fallback when you deploy live, as it's inherently insecure. Consider switching to certmask for development. More info here: http://truffleframework.com/tutorials/truffle-and-certmask");
+    console.warn("No web3 detected. Falling back to http://127.0.0.1:8545. You should remove this fallback when you deploy live, as it's inherently insecure. Consider switching to weggamask for development. More info here: http://truffleframework.com/tutorials/truffle-and-weggamask");
     // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
     window.web3 = new __WEBPACK_IMPORTED_MODULE_0_web3___default.a(new __WEBPACK_IMPORTED_MODULE_0_web3___default.a.providers.HttpProvider("http://127.0.0.1:8545"));
   }

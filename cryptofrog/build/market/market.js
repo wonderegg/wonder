@@ -43455,8 +43455,8 @@ var account;
 var sellrate =1;
 var buyrate =1;
 
-        var wondereggContract ;
-        var Coursetro ;
+var wondereggContract ;
+var weggs ;
             
 
 window.App = {
@@ -43496,10 +43496,10 @@ window.App = {
   refreshBalance: function() {
     var self = this;
     $("#loader").show();
-    var cert;
+    var wegga;
     WonderEgg.deployed().then(function(instance) {
-      cert = instance;
-      return cert.getPrices();
+      wegga = instance;
+      return wegga.getPrices();
     }).then(function(result){   // sellrate,buyrate
         if(result)
             {
@@ -43521,8 +43521,8 @@ window.App = {
 
     var outtext;
     WonderEgg.deployed().then(function(instance) {
-      cert = instance;
-      return cert.getlastWonderStruct({from: account});
+      wegga = instance;
+      return wegga.getlastWonderStruct({from: account});
     }).then(function(result){   // wonder.addr,wonder.id,wonder.wprice,wonder.idName,wonder.Description
         var text = 'test';
         if(result)
@@ -43570,69 +43570,63 @@ window.App = {
 
     var count ;
     var output ;
-    //var cert;
+    //var wegga;
 
     WonderEgg.deployed().then(function(instance) {
-      cert = instance;
-    wondereggContract = web3.eth.contract(cert.abi);
-    Coursetro = wondereggContract.at(cert.address);
-      return cert.countWonderStructs();
+      wegga = instance;
+    wondereggContract = web3.eth.contract(wegga.abi);
+    weggs = wondereggContract.at(wegga.address);
+      return wegga.countWonderStructs();
     }).then(function(result ){  
       if (result) {
         count = result.c;
         output =count + ' total Wonder Eggs.  only your create/purchsed wonder egg will show here with pictures, below is one Youngest born wonder egg example FYI <hr>';
         for (var i = 0; i < count; i++) {
-
-              Coursetro.getWonderStructByID(i, function(error, result){
-                var text = '';
-                if(result)
-                    {
-                        var icase = result[4]%6+1;
-                        switch (icase) {
-                                case '1':
-                                    text = "I believe the world is flat. My great-great-great-great-great-great grandkitty lived with Confucius. I think you'll love me beclaws I have cattitude.";
-                                    break;
-                                case '2':
-                                    text = "My friends describe me as vegan and despicable. I once got in a fight with a chimpanzee, and won. We're so fur-tunate to have found each other!";
-                                    break;
-                                case '3':
-                                    text = " I'm often referred to as the Samwise Gamgee of the group. My secret indulgence is cereal. We're so fur-tunate to have found each other!";
-                                    break;
-                                case '4':
-                                    text = "I enjoy picking flowers, tripping my owner, and spinning sick beats. In my free time, I can usually be found wondrous or sleeping in fresh laundry. Purrhaps this is the beginning of a beautiful relationship.";
-                                    break;
-                                case '5':
-                                    text = "I'm here to enjoy eating until I loathe myself and watching Stranger Things. I'm convinced that the world is flat. One day I'll prove it. This will be an amewsing friendship.";
-                                    break;
-                                case '6':
-                                    text = "My friends describe me as smelly and gorgeous. I once dreamed of being a Private Dancer . Now I can be found reading Danielle Steele all day. Will you be the garlic butter to my marmalade?";
-                                    break;
-                                case '7':
-                                    text = " I want to live in a world where people believe the world is flat. When my owner isn't watching, I steal their clutches and use them for litter paper. I'm not sorry. Will you be the ranch dressing to my soy sauce?";
-                        }
-            
-            
-                        if (result[1]==0) {
-                            console.log("refresh get last nameid no id found under user account: "+web3.eth.defaultAccount);
-            
-                        }
-                        else{
-                          //for(var z=0; z < 5; z++){
-                            outtext = outtext + '<div class="image-icon flex-container"><a href="#">'+'<img id="'+icase+'" width="100%" flex-wrap: wrap;display: flex; src="http://res.cloudinary.com/cryptofrog/image/upload/v1521082543/'+icase+'.jpg"></a><div><div style="word-wrap: break-word;">' + web3.toAscii(result[3]) + ': '+ result[1] + '</div><div style="word-wrap: break-word;">(Price: '+result[2]/sellrate+' ether)</div></div></div>';
-                            console.log("refresh get last nameid: " + outtext);
-                          //}  
-                        }
-                        
-                $("#countIns").html(output+'<div style="flex-wrap: wrap;display: flex;">'+outtext+'</div>');
+           weggs.getWonderStructByID(i, function(error, result){
+            var text = '';
+            if(result)
+                {
+                    var icase = result[4]%6+1;
+                    switch (icase) {
+                            case '1':
+                                text = "I believe the world is flat. My great-great-great-great-great-great grandkitty lived with Confucius. I think you'll love me beclaws I have cattitude.";
+                                break;
+                            case '2':
+                                text = "My friends describe me as vegan and despicable. I once got in a fight with a chimpanzee, and won. We're so fur-tunate to have found each other!";
+                                break;
+                            case '3':
+                                text = " I'm often referred to as the Samwise Gamgee of the group. My secret indulgence is cereal. We're so fur-tunate to have found each other!";
+                                break;
+                            case '4':
+                                text = "I enjoy picking flowers, tripping my owner, and spinning sick beats. In my free time, I can usually be found wondrous or sleeping in fresh laundry. Purrhaps this is the beginning of a beautiful relationship.";
+                                break;
+                            case '5':
+                                text = "I'm here to enjoy eating until I loathe myself and watching Stranger Things. I'm convinced that the world is flat. One day I'll prove it. This will be an amewsing friendship.";
+                                break;
+                            case '6':
+                                text = "My friends describe me as smelly and gorgeous. I once dreamed of being a Private Dancer . Now I can be found reading Danielle Steele all day. Will you be the garlic butter to my marmalade?";
+                                break;
+                            case '7':
+                                text = " I want to live in a world where people believe the world is flat. When my owner isn't watching, I steal their clutches and use them for litter paper. I'm not sorry. Will you be the ranch dressing to my soy sauce?";
                     }
-                else{
-                    $("#loader").hide();
-                    console.error(error);
+
+
+                    if (result[1]==0) {
+                        console.log("refresh get last nameid no id found under user account: "+web3.eth.defaultAccount);
+
+                    }
+                    else{
+                            outtext = outtext + '<div class="image-icon flex-container"><a href="#">'+'<img id="'+icase+'" width="100%" flex-wrap: wrap;display: flex; src="http://res.cloudinary.com/cryptofrog/image/upload/v1521082543/'+icase+'.jpg"></a><div><div style="word-wrap: break-word;">' + web3.toAscii(result[3]) + ': '+ result[1] + '</div><div style="word-wrap: break-word;">(Price: '+result[2]/sellrate+' ether)</div></div></div>';
+                    console.log("refresh get last nameid: " + outtext);
+                    }
+                    
+                $("#countIns").html(output+'<div style="flex-wrap: wrap;display: flex;">'+outtext+'</div>');
                 }
-              });
-
-
-
+            else{
+                $("#loader").hide();
+                console.error(error);
+            }
+          });
          }
       }
     }).catch(function(e) {
@@ -43643,12 +43637,12 @@ window.App = {
   },
 
 
-  setCED: function() {
+  setWonderEgg: function() {
     var self = this;
-    var cert;
+    var wegga;
     WonderEgg.deployed().then(function(instance) {
-      cert = instance;
-      return cert.setWonderStruct(web3.eth.defaultAccount, $("#age").val()*sellrate, $("#idName").val(), $("#lDescription").val(),{from: account});
+      wegga = instance;
+      return wegga.setWonderStruct(web3.eth.defaultAccount, $("#age").val()*sellrate, $("#idName").val(), $("#lDescription").val(),{from: account});
     }).then(function(result ){   
                 if(result)
                     {
@@ -43670,10 +43664,10 @@ window.App = {
 
   eventwonderInfo: function() {
     var self = this;
-    var cert;
+    var wegga;
     WonderEgg.deployed().then(function(instance) {
-      cert = instance;
-      return cert.wonderInfo({}, 'latest',{from: account});
+      wegga = instance;
+      return wegga.wonderInfo({}, 'latest',{from: account});
     }).then(function(result ){   
         var text = 'test';
         if(result)
@@ -43721,13 +43715,13 @@ window.App = {
 };
 
 window.addEventListener('load', function() {
-  // Checking if Web3 has been injected by the browser (Mist/certMask)
+  // Checking if Web3 has been injected by the browser (Mist/weggaMask)
   if (typeof web3 !== 'undefined') {
-    console.warn("Using web3 detected from external source. If you find that your accounts don't appear or you have 0 WonderEgg, ensure you've configured that source properly. If using certMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-certmask")
-    // Use Mist/certMask's provider
+    console.warn("Using web3 detected from external source. If you find that your accounts don't appear or you have 0 WonderEgg, ensure you've configured that source properly. If using weggaMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-weggamask")
+    // Use Mist/weggaMask's provider
     window.web3 = new __WEBPACK_IMPORTED_MODULE_0_web3___default.a(web3.currentProvider);
   } else {
-    console.warn("No web3 detected. Falling back to http://127.0.0.1:8545. You should remove this fallback when you deploy live, as it's inherently insecure. Consider switching to certmask for development. More info here: http://truffleframework.com/tutorials/truffle-and-certmask");
+    console.warn("No web3 detected. Falling back to http://127.0.0.1:8545. You should remove this fallback when you deploy live, as it's inherently insecure. Consider switching to weggamask for development. More info here: http://truffleframework.com/tutorials/truffle-and-weggamask");
     // fallback - use your fallback strategy (local node / hosted node + in-dapp id mgmt / fail)
     window.web3 = new __WEBPACK_IMPORTED_MODULE_0_web3___default.a(new __WEBPACK_IMPORTED_MODULE_0_web3___default.a.providers.HttpProvider("http://127.0.0.1:8545"));
   }
