@@ -114,7 +114,7 @@ window.App = {
                 case '7':
                     text = " I want to live in a world where people believe the world is flat. When my owner isn't watching, I steal their clutches and use them for litter paper. I'm not sorry. Will you be the ranch dressing to my soy sauce?";
             }
-            outtext = 'Youngest Wonder Egg ID: '+ result[1]+ '   I am '+ web3.toAscii(result[3])+'  :)  '+ String(text)+' (Price: '+result[2]/sellrate+' ether)'  ;
+            outtext = 'Youngest Wonder Egg ID: '+ result[1]+ '   I am '+ web3.toAscii(result[3])+'  :)  '+ String(text)+' (Price: '+result[2]/sellrate+' ether) '   ;
             $("#instructor").html(outtext);
             $("#idName").val(web3.toAscii(result[3]).replace(/\u0000/g, ''));
             $("#age").val(result[2]/sellrate);

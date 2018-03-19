@@ -19,7 +19,8 @@ module.exports = {
       { from: './app/my/index.html', to: "my/index.html" },
       { from: './app/market/index.html', to: "market/index.html" },
       { from: './app/help/index.html', to: "help/index.html" },
-      { from: './app/admin/index.html', to: "admin/index.html" }
+      { from: './app/admin/index.html', to: "admin/index.html" },
+      { from: './app/my/main.css', to: "my/main.css"}
     ])
   ],
   module: {
