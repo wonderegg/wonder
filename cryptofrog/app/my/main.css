@@ -4,7 +4,7 @@ body {
     font-family: 'Raleway','Source Sans Pro', 'Arial';
 }
 .container {
-    width: 50%;
+    width: 80%;
     margin: 0 auto;
 }
 label {
@@ -5620,27 +5620,27 @@ button1 {
   
   @font-face {
     font-family: Calibre;
-    src: url("/assets/fonts/Calibre-Regular.eot");
-    src: url("/assets/fonts/Calibre-Regular.eot") format("embedded-opentype"), url("/assets/fonts/Calibre-Regular.woff2") format("woff2"), url("/assets/fonts/Calibre-Regular.woff") format("woff"), url("/assets/fonts/Calibre-Regular.otf") format("opentype");
+    src: url("/my/font/Calibre-Regular.eot");
+    src: url("/my/font/Calibre-Regular.eot") format("embedded-opentype"), url("/my/font/Calibre-Regular.woff2") format("woff2"), url("/my/font/Calibre-Regular.woff") format("woff"), url("/s/Calibre-Regular.otf") format("opentype");
     font-weight: 400; }
   
   @font-face {
     font-family: Calibre;
-    src: url("/assets/fonts/Calibre-RegularItalic.eot");
-    src: url("/assets/fonts/Calibre-RegularItalic.eot") format("embedded-opentype"), url("/assets/fonts/Calibre-RegularItalic.woff2") format("woff2"), url("/assets/fonts/Calibre-RegularItalic.woff") format("woff");
+    src: url("/my/font/Calibre-RegularItalic.eot");
+    src: url("/my/font/Calibre-RegularItalic.eot") format("embedded-opentype"), url("/my/font/Calibre-RegularItalic.woff2") format("woff2"), url("/my/font/Calibre-RegularItalic.woff") format("woff");
     font-weight: 400;
     font-style: italic; }
   
   @font-face {
     font-family: Calibre;
-    src: url("/assets/fonts/Calibre-Medium.eot");
-    src: url("/assets/fonts/Calibre-Medium.eot") format("embedded-opentype"), url("/assets/fonts/Calibre-Medium.woff2") format("woff2"), url("/assets/fonts/Calibre-Medium.woff") format("woff"), url("/assets/fonts/Calibre-Medium.otf") format("opentype");
+    src: url("/my/font/Calibre-Medium.eot");
+    src: url("/my/font/Calibre-Medium.eot") format("embedded-opentype"), url("/my/font/Calibre-Medium.woff2") format("woff2"), url("/my/font/Calibre-Medium.woff") format("woff"), url("/my/font/Calibre-Medium.otf") format("opentype");
     font-weight: 500; }
   
   @font-face {
     font-family: Calibre;
-    src: url("/assets/fonts/Calibre-Semibold.eot");
-    src: url("/assets/fonts/Calibre-Semibold.eot") format("embedded-opentype"), url("/assets/fonts/Calibre-Semibold.woff2") format("woff2"), url("/assets/fonts/Calibre-Semibold.woff") format("woff"), url("/assets/fonts/Calibre-Semibold.otf") format("opentype");
+    src: url("/my/font/Calibre-Semibold.eot");
+    src: url("/my/font/Calibre-Semibold.eot") format("embedded-opentype"), url("/my/font/Calibre-Semibold.woff2") format("woff2"), url("/my/font/Calibre-Semibold.woff") format("woff"), url("/my/font/Calibre-Semibold.otf") format("opentype");
     font-weight: 600; }
   
   * {

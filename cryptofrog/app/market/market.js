@@ -132,6 +132,7 @@ window.App = {
 
     var count ;
     var output ;
+    var imageTxt = "";
     //var wegga;
 
     WonderEgg.deployed().then(function(instance) {
@@ -178,11 +179,11 @@ window.App = {
 
                     }
                     else{
-                            outtext = outtext + '<div class="image-icon flex-container"><a href="#">'+'<img id="'+icase+'" width="100%" flex-wrap: wrap;display: flex; src="http://res.cloudinary.com/cryptofrog/image/upload/v1521082543/'+icase+'.jpg"></a><div><div style="word-wrap: break-word;">' + web3.toAscii(result[3]) + ': '+ result[1] + '</div><div style="word-wrap: break-word;">(Price: '+result[2]/sellrate+' ether)</div></div></div>';
-                    console.log("refresh get last nameid: " + outtext);
+                        imageTxt = imageTxt + '<div class="image-icon flex-container"><a href="#">'+'<img id="'+icase+'" width="100%" flex-wrap: wrap;display: flex; src="http://res.cloudinary.com/cryptofrog/image/upload/v1521082543/'+icase+'.jpg"></a><div><div style="word-wrap: break-word;">' + web3.toAscii(result[3]) + ': '+ result[1] + '</div><div style="word-wrap: break-word;">(Price: '+result[2]/sellrate+' ether)</div></div></div>';
+                        //console.log("refresh get last nameid: " + outtext);
                     }
                     
-                $("#countIns").html(output+'<div style="flex-wrap: wrap;display: flex;">'+outtext+'</div>');
+                $("#countIns").html(output+ outtext+'<div style="flex-wrap: wrap;display: flex;">'+imageTxt+'</div>');
                 }
             else{
                 $("#loader").hide();
