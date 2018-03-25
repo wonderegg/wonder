@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OntarioVotes2018- Truffle Webpack Demo w/ Frontend</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+  <style>
+    .margin-top-3 {
+      margin-top: 3em;
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+  <script src="./app.js"></script>
+</head>
+<body>
+  <h1>Ontario Votes 2018!</h1>
+    <div class="table-responsive">
+      <h2>1. Voter Registration</h2>
+      <div>Please enter your Name and Ropsten Address to Regsiter.  After a successful registration, you will receive a VOTING token so that you can vote.<br/>
+      You can only register <b>ONCE</b> with one address.
+      </div>
+      <br/>
+      <b>Registration Status:</b> <div id="msg">Not submitted yet.</div>
+      <br/>
+      <input type="text" id="voterName" maxlength=30 placeholder="Enter your name"/>
+      <br/>
+      <br/>
+      <input type="text" id="voterAddr" placeholder="Voter blockchain address e.g., 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae"/>
+      <br/>
+      <br/>
+      <a href="#" onclick="App.voterRegister()" class="btn btn-primary">Register</a>
+    </div>
+    <br/>
+
+    <div class="table-responsive">
+      <h2>2. Cast your Vote</h2>
+      <div>Please make your selection and  enter your Ropsten Address to Vote.<br/>
+      Please register first and verify that you have received a VOTING token so that you can vote.<br/>
+      You can only vote <b>ONCE</b> with one address.
+      </div><br/>
+      <b>Voting Status:</b> <div id="votingmsg">Not submitted yet.</div>
+      <br/>
+      <table class="table table-bordered">
+        <thead>
+          <tr style="text-align: left;">
+            <th>Selection</th>
+            <th>Candidate-ID</th>
+            <th>Votes Received</th>
+          </tr>
+        </thead>
+        <tbody id="candidate-rows">
+        </tbody>
+      </table>
+      <input type="text" id="voterAddrForVoting" placeholder="Voter blockchain address e.g., 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae"/><br/><br/>
+      <a href="#" onclick="App.voteForCandidate()" class="btn btn-primary">Vote</a>
+    </div>
+    <br/>
+
+    <div class="table-responsive">
+      <h2>3. Registered Voters</h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Voter Name</th>
+            <th>Voted for Candidate-ID (0 means not voted yet)</th>
+          </tr>
+        </thead>
+        <tbody id="voter-rows">
+        </tbody>
+      </table>
+    </div>
+    <br/>
+
+  <hr>
+
+</body>
+</html>
