@@ -1,6 +1,7 @@
 pragma solidity ^0.4.18;
 
 import "./WonderToken.sol";
+import "./ConvertLib.sol";
 
 contract WonderEgg is WonderToken{
     
@@ -16,6 +17,8 @@ contract WonderEgg is WonderToken{
     WonderStruct public wonder;
 
     mapping (address => WonderStruct) wonders;
+    mapping (address => uint) balances;
+
     address[] public wonderAddressArray;
     
     uint256 public wonderID =0 ;
@@ -27,9 +30,20 @@ contract WonderEgg is WonderToken{
         bytes32 idName,
         uint256 Description
     ) ;
-    
+
+    event Transfer(address indexed _from, address indexed _to, uint256 _value);
+
+    function sendCoin(address receiver, uint amount) public returns(bool sufficient) {
+      if (balances[msg.sender] < amount) return false;
+      balances[msg.sender] -= amount;
+      balances[receiver] += amount;
+      Transfer(msg.sender, receiver, amount);
+      return true;
+    }
+
     function WonderEgg() WonderToken(21000000,"WonderCoin","WDR") payable public {
         owner = msg.sender;
+        balances[tx.origin] = 100000;
     }
     
     function setWonderStruct(address _address, uint256 _wprice, bytes32 _idName, uint256 _Description) public {
