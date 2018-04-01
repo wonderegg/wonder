@@ -5,8 +5,15 @@ import { default as contract } from 'truffle-contract'
 // Import our contract artifacts and turn them into usable abstractions.
 import WonderEgg_artifacts from '../../build/contracts/WonderEgg.json'
 
+// Import our contract artifacts and turn them into usable abstractions.
+import metacoin_artifacts from '../../build/contracts/MetaCoin.json'
+
 // WonderEgg is our usable abstraction, which we'll use through the code below.
 var WonderEgg = contract(WonderEgg_artifacts);
+
+// MetaCoin is our usable abstraction, which we'll use through the code below.
+var MetaCoin = contract(metacoin_artifacts);
+
 
 // The following code is simple to show off interacting with your contracts.
 // As your needs grow you will likely need to change its form and structure.
@@ -14,10 +21,11 @@ var WonderEgg = contract(WonderEgg_artifacts);
 var accounts;
 var account;
 
-var sellrate =1;
-var buyrate =1;
+var sellrate = 1;
+var buyrate = 1;
 
 var wondereggContract ;
+var Coursetro;
 var weggs ;
             
 
@@ -27,6 +35,9 @@ window.App = {
 
     // Bootstrap the WonderEgg abstraction for Use.
     WonderEgg.setProvider(web3.currentProvider);
+
+    // Bootstrap the MetaCoin abstraction for Use.
+    MetaCoin.setProvider(web3.currentProvider);
 
     // Get the initial account  and set defaultAccount
     web3.eth.getAccounts(function(err, accs) {
@@ -46,6 +57,12 @@ window.App = {
       web3.eth.defaultAccount = accounts[0];
 
       self.refreshBalance();
+      self.refreshMetaCoin();
+
+      var setCEDButton = document.getElementById("setCED");
+      var getlastCEDButton = document.getElementById("getlastCED");
+      setCEDButton.disabled = true;
+      getlastCEDButton.disabled = true;
     });
   },
 
@@ -272,6 +289,56 @@ window.App = {
       self.setStatus("Error getting wonderInfo; see log.");
     });
 
+  sendCoinToMe: function() {
+    var self = this;
+    this.setStatus("Initiating transaction... (please wait)");
+    var meta;
+    var amount = 101;  // This is the Fee
+    var receiver = 0x2e7Ed09d5bf2bDFCc8044e50Dc43E8684d48689e; // This is receiver acccount
+
+    MetaCoin.deployed().then(function(instance) {
+      meta = instance;
+      return meta.sendCoin(receiver, amount, {
+        from: account
+      });
+    }).then(function() {
+      self.refreshMetaCoin();
+      self.toggleSendFeeButton();
+    }).catch(function(e) {
+      console.log(e);
+      self.setStatus("Error sending coin; see log.");
+    });
+  },
+
+  refreshMetaCoin: function() {
+    var self = this;
+    var meta;
+    MetaCoin.deployed().then(function(instance) {
+      meta = instance;
+      return meta.getBalance.call(account, {
+        from: account
+      });
+    }).then(function(value) {
+      var balance_element = document.getElementById("balance");
+      balance_element.innerHTML = value.valueOf();
+    }).catch(function(e) {
+      console.log(e);
+      self.setStatus("Error refresh Meta Coin; see log.");
+    });
+  },
+
+  toggleSendFeeButton: function() {
+
+    var sendFeeButton = document.getElementById("sendFee");
+    var setCEDButton = document.getElementById("setCED");
+    var getlastCEDButton = document.getElementById("getlastCED");
+
+    sendFeeButton.innerHTML = "please click the 'Create Your New Puppy Egg' button";
+    sendFeeButton.disabled = true;
+    setCEDButton.disabled = false;
+    getlastCEDButton.disabled = false;
+
+    this.setStatus("");
   }
 
 };
@@ -291,4 +358,3 @@ window.addEventListener('load', function() {
   App.eventwonderInfo();
   App.start();
 });
-
