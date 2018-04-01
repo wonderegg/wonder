@@ -11,28 +11,31 @@
   <script src="./app.js"></script>
 </head>
 <body>
+        <h1>Certified Blockchain Ethereum Developer</h1><br/>
+        <div>The web page is designed for CBED management and CBEDAdmin management. </div>
+        <br/><br/><br/>
+
+
+
   <div class="container">
-
-        <h1>Certified Blockchain Ethereum Developer</h1>
-        <span id="countIns"></span>
-
-        <h1 id="instructor"></h1>
-        <hr>
-        <!-- <img id="loader" src="../../app/web/pic/lg.double-ring-spinner.gif"> -->
-
-      
+      <div>********************************************</div><br/>
+      <!-- CBED Management Functions -->
+      <h2>CBED Management</h2> <br/>
+      <div>Setting and Searching Functions, and only <b>CBED admin</b> can set CBED.</div>
+      <br/>
+      <h3>Set, Search CBED</h3> <br/>      
       <div class="row">
-          <label for="id" class="col-lg-2 control-label" style="text-align: right;">ID:</label>
+          <label for="id" class="col-lg-2 control-label" style="text-align: right;">CBED ID:</label>
           <input id="id" type="text">
       </div>
 
       <div class="row top-buffer">
-        <label for="cid" class="col-lg-2 control-label" style="text-align: right;">CID:</label>
+        <label for="cid" class="col-lg-2 control-label" style="text-align: right;">CBED CID:</label>
         <input id="cid"  type="text">
       </div>
       
       <div class="row top-buffer">
-        <label for="fullname" class="col-lg-2 control-label" style="text-align: right;">Full Name:</label>
+        <label for="fullname" class="col-lg-2 control-label" style="text-align: right;">CBED Full Name:</label>
         <input id="fullname" type="text">
       </div>
 
@@ -51,24 +54,63 @@
         <input id="validUntil" type="text">
       </div>
       <hr>
+
       <div class="row">
-        <button id="setCED" class="col-lg-2" onclick="App.setCED()">Set CED</button>
+        <button id="setCED" class="col-lg-2" onclick="App.setCED()">Set CBED <b>(Admin only)</b></button>
         <span class="col-lg-1"></span>
-        <button id="getlastCED" class="col-lg-2" onclick="App.refreshBalance()">Get Last CED</button>
+        <button id="getlastCED" class="col-lg-2" onclick="App.refreshBalance()">Get Last CBED</button>
         <span class="col-lg-1"></span>
-        <button id="getCEDByID" class="col-lg-2" onclick="App.getCEDByID()">Get CED By ID</button>
+        <button id="getCEDByID" class="col-lg-2" onclick="App.getCEDByID()">Get CBED By ID</button>
         <span class="col-lg-1"></span>
-        <button id="getCEDByCID" class="col-lg-2" onclick="App.getCEDByCID()">Get CED By CID</button>
+        <button id="getCEDByCID" class="col-lg-2" onclick="App.getCEDByCID()">Get CBED By CID</button>
       </div>
-  <hr>
-  <div class="row" style="background-color:lavender;">
-    <div class="col-lg-6">
-      <h3>Coin Balance: [ <span id="balance"></span> ]</h3>
-    </div>
-    <div class="col-lg-6">
-      <h3><span id="status"></span></h3>
-    </div>
+
+
+  <br/><br/><br/>
+
+
+
+
+      <div>**********************************************************</div><br/>
+      <!-- CBED Admin Management Functions (owher functions) -->
+      <h2>CBED Admin Management</h2> <br/>
+      <div>Only <b>Owner</b> can add, activate and deactivate CBED Admin. </div>
+      <br/>     
+      <h3>Add, Activate, Deactivate CBED Admin</h3> <br/>
+      <div class="row">
+          <label for="adminId" class="col-lg-2 control-label" style="text-align: right;">Admin Id:</label>
+          <input id="adminId" type="text">
+      </div>
+      
+      <div class="row top-buffer">
+        <label for="adminfullname" class="col-lg-2 control-label" style="text-align: right;">Full Name:</label>
+        <input id="adminfullname" type="text">
+      </div>
+
+      <div class="row top-buffer">
+        <label for="adminAddress" class="col-lg-2 control-label" style="text-align: right;">Admin Address:</label>
+        <input id="adminAddress" type="text">
+      </div>
+
+      <div class="row">
+        <button id="addcEDAdmin" class="col-lg-2" onclick="App.addcEDAdmin()">Add CBED Admin</button>        
+        <span class="col-lg-1"></span>
+        <button id="activecEDAdminByAdminID" class="col-lg-2" onclick="App.activecEDAdminByAdminID()">Activate By Admin ID</button>
+        <span class="col-lg-1"></span>
+        <button id="deactivecEDAdminByAdminID" class="col-lg-2" onclick="App.deactivecEDAdminByAdminID()">Deactivate By Admin ID</button>
+        <span class="col-lg-1"></span>                
+      </div>
+
+	  
+		<!--div class="row" style="background-color:lavender;">
+			<div class="col-lg-6">
+				<h3><span id="status"></span></h3>
+			</div>
+		</div-->  
+	  
   </div>
-</div>
+
+
+
 </body>
 </html>

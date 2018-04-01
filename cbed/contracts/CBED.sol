@@ -93,13 +93,5 @@ contract CBED {
 	}
 
 
-    /* function getCBED() for getting the list of certificated ethereum developers 
-	function getCBED() view public returns (uint256 , string , string ,string ,string ,string ) {
-	  for (uint256 i = 0; i < CBEDStructArray.length ; i++) {
-	      return (CBEDStructArray[i].id, CBEDStructArray[i].cid,CBEDStructArray[i].fullname,CBEDStructArray[i].coursename,CBEDStructArray[i].issuedOn, CBEDStructArray[i].validUntil);	      
-	  }    
-	}*/
-
-
 }
 

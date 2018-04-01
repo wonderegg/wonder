@@ -6,10 +6,12 @@ import { default as Web3} from 'web3';
 import { default as contract } from 'truffle-contract'
 
 // Import our contract artifacts and turn them into usable abstractions.
-import CBED_artifacts from '../../build/contracts/CBED.json'
+//import CBED_artifacts from '../../build/contracts/CBED.json'
+import CBEDAdmin_artifacts from '../../build/contracts/CBEDAdmin.json'
 
 // CBED is our usable abstraction, which we'll use through the code below.
-var CBED = contract(CBED_artifacts);
+//var CBED = contract(CBED_artifacts);
+var CBEDAdmin = contract(CBEDAdmin_artifacts);
 
 // The following code is simple to show off interacting with your contracts.
 // As your needs grow you will likely need to change its form and structure.
@@ -22,7 +24,8 @@ window.App = {
     var self = this;
 
     // Bootstrap the CBED abstraction for Use.
-    CBED.setProvider(web3.currentProvider);
+    //CBED.setProvider(web3.currentProvider);
+    CBEDAdmin.setProvider(web3.currentProvider);
 
     // Get the initial account balance so it can be displayed.
     web3.eth.getAccounts(function(err, accs) {
@@ -52,7 +55,7 @@ window.App = {
     var self = this;
 
     var cert;
-    CBED.deployed().then(function(instance) {
+    CBEDAdmin.deployed().then(function(instance) {
       cert = instance;
       return cert.getlastCED();
     }).then(function(ced ){   // id,_cid,fullname,coursename,issuedOn,validUntil
@@ -70,7 +73,7 @@ window.App = {
       validUntil_element.value = ced[5].valueOf();
     }).catch(function(e) {
       console.log(e);
-      self.setStatus("Error getting cid; see log.");
+      self.setStatus("Error getting ced; see log.");
     });
   },
 
@@ -80,7 +83,7 @@ window.App = {
 
     var cert;
     var id = parseInt(document.getElementById("id").value);
-    CBED.deployed().then(function(instance) {
+    CBEDAdmin.deployed().then(function(instance) {
       cert = instance;
       return cert.getCEDStructByID(id,{from: account});
     }).then(function(ced ){   // id,_cid,fullname,coursename,issuedOn,validUntil
@@ -98,7 +101,7 @@ window.App = {
       validUntil_element.value = ced[5].valueOf();
     }).catch(function(e) {
       console.log(e);
-      self.setStatus("Error getting cid; see log.");
+      self.setStatus("Error getting ced; see log.");
     });
   },
 
@@ -108,7 +111,7 @@ window.App = {
 
     var cert;
     var cid = document.getElementById("cid").value;
-    CBED.deployed().then(function(instance) {
+    CBEDAdmin.deployed().then(function(instance) {
       cert = instance;
       return cert.getCEDStructsByCID(cid,{from: account});
     }).then(function(ced ){   // id,_cid,fullname,coursename,issuedOn,validUntil
@@ -126,14 +129,14 @@ window.App = {
       validUntil_element.value = ced[5].valueOf();
     }).catch(function(e) {
       console.log(e);
-      self.setStatus("Error getting cid; see log.");
+      self.setStatus("Error getting ced; see log.");
     });
   },
 
   setCED: function() {
     var self = this;
 
-//    var id = parseInt(document.getElementById("id").value);
+    //var id = parseInt(document.getElementById("id").value);
     var cid = document.getElementById("cid").value;
     var fullname = document.getElementById("fullname").value;
     var coursename = document.getElementById("coursename").value;
@@ -143,7 +146,7 @@ window.App = {
     this.setStatus("Initiating transaction... (please wait)");
 
     var cert;
-    CBED.deployed().then(function(instance) {
+    CBEDAdmin.deployed().then(function(instance) {
       cert = instance;
       return cert.setCED(cid,fullname,coursename,issuedOn, validUntil, {from: account});
     }).then(function() {
@@ -153,10 +156,123 @@ window.App = {
       console.log(e);
       self.setStatus("Error setCED; see log.");
     });
+  },
 
 
+
+/*
+
+refreshAdmin
+
+*/
+
+  refreshAdmin: function() {
+    var self = this;
+
+    var cert;
+    CBEDAdmin.deployed().then(function(instance) {
+      cert = instance;
+      return cert.getLastcEDAdmin();
+    }).then(function(ced ){   // id,_cid,fullname,adminAddress
+      var id_element = document.getElementById("adminId");
+      id_element.value = ced[0].valueOf();
+      var fullname_element = document.getElementById("fullname");
+      fullname_element.value = ced[1].valueOf();
+      //var coursename_element = document.getElementById("adminPermitStatus");
+      //coursename_element.value = ced[2].valueOf();
+      var issuedOn_element = document.getElementById("adminAddress");
+      issuedOn_element.value = ced[2].valueOf();
+
+    }).catch(function(e) {
+      console.log(e);
+      self.setStatus("Error getting last cbed admin; see log.");
+    });
+  },
+
+
+
+/*
+    function addcEDAdmin(string _adminFullname,address _adminAddress ) 
+    onlyOwner public  returns ( bool ) { }    
+*/
+  addcEDAdmin: function() {
+    var self = this;
+
+    //var adminId = document.getElementById("adminId").value;
+    var adminfullname = document.getElementById("adminfullname").value;
+    //var adminPermitStatus = document.getElementById("adminPermitStatus").value;
+    var adminAddress = document.getElementById("adminAddress").value;
+
+    this.setStatus("Initiating transaction... (please wait)");
+
+    var cert;
+    CBEDAdmin.deployed().then(function(instance) {
+      cert = instance;
+      return cert.addcEDAdmin(adminfullname,adminAddress, {from: account});
+    }).then(function() {
+      self.setStatus("Add CEDAdmin update string");
+      self.refreshAdmin();
+    }).catch(function(e) {
+      console.log(e);
+      self.setStatus("Error Adding cEDAdmin; see log.");
+    });
+  },
+
+
+
+  activecEDAdminByAdminID:  function() {
+    var self = this;
+
+    var adminId = document.getElementById("adminId").value;
+
+    this.setStatus("Initiating transaction... (please wait)");
+
+    var cert;
+    CBEDAdmin.deployed().then(function(instance) {
+      cert = instance;
+      return cert.activecEDAdminByAdminID(adminId, {from: account});
+    }).then(function() {
+      self.setStatus("Activate CEDAdmin update string");
+      self.refreshAdmin();
+    }).catch(function(e) {
+      console.log(e);
+      self.setStatus("Error Activating cEDAdmin; see log.");
+    });
+  },
+
+
+
+  deactivecEDAdminByAdminID:  function() {
+    var self = this;
+
+    var adminId = document.getElementById("adminId").value;
+
+    this.setStatus("Initiating transaction... (please wait)");
+
+    var cert;
+    CBEDAdmin.deployed().then(function(instance) {
+      cert = instance;
+      return cert.deactivecEDAdminByAdminID(adminId, {from: account});
+    }).then(function() {
+      self.setStatus("Deactivate CEDAdmin update string");
+      self.refreshAdmin();
+    }).catch(function(e) {
+      console.log(e);
+      self.setStatus("Error Deactivating cEDAdmin; see log.");
+    });
   }
+
+
+
+
 };
+
+
+
+
+
+
+
 
 window.addEventListener('load', function() {
   // Checking if Web3 has been injected by the browser (Mist/certMask)
@@ -171,6 +287,7 @@ window.addEventListener('load', function() {
   }
 
   App.start();
+
 });
 
 
