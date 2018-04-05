@@ -36577,7 +36577,7 @@ module.exports = TruffleSchema;
 /* 143 */
 /***/ (function(module, exports) {
 
-module.exports = {"_from":"truffle-contract-schema@0.0.5","_id":"truffle-contract-schema@0.0.5","_inBundle":false,"_integrity":"sha1-Xp0gvQvyon/pQxB0gknUhO7kmWE=","_location":"/truffle-contract-schema","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"truffle-contract-schema@0.0.5","name":"truffle-contract-schema","escapedName":"truffle-contract-schema","rawSpec":"0.0.5","saveSpec":null,"fetchSpec":"0.0.5"},"_requiredBy":["/truffle-contract"],"_resolved":"https://registry.npmjs.org/truffle-contract-schema/-/truffle-contract-schema-0.0.5.tgz","_shasum":"5e9d20bd0bf2a27fe94310748249d484eee49961","_spec":"truffle-contract-schema@0.0.5","_where":"D:\\temp\\1\\class\\demo1\\node_modules\\truffle-contract","author":{"name":"Tim Coulter","email":"tim.coulter@consensys.net"},"bugs":{"url":"https://github.com/trufflesuite/truffle-schema/issues"},"bundleDependencies":false,"dependencies":{"crypto-js":"^3.1.9-1"},"deprecated":false,"description":"JSON schema for contract artifacts","devDependencies":{"mocha":"^3.2.0"},"homepage":"https://github.com/trufflesuite/truffle-schema#readme","keywords":["ethereum","json","schema","contract","artifacts"],"license":"MIT","main":"index.js","name":"truffle-contract-schema","repository":{"type":"git","url":"git+https://github.com/trufflesuite/truffle-schema.git"},"scripts":{"test":"mocha"},"version":"0.0.5"}
+module.exports = {"_from":"truffle-contract-schema@0.0.5","_id":"truffle-contract-schema@0.0.5","_inBundle":false,"_integrity":"sha1-Xp0gvQvyon/pQxB0gknUhO7kmWE=","_location":"/truffle-contract-schema","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"truffle-contract-schema@0.0.5","name":"truffle-contract-schema","escapedName":"truffle-contract-schema","rawSpec":"0.0.5","saveSpec":null,"fetchSpec":"0.0.5"},"_requiredBy":["/truffle-contract"],"_resolved":"https://registry.npmjs.org/truffle-contract-schema/-/truffle-contract-schema-0.0.5.tgz","_shasum":"5e9d20bd0bf2a27fe94310748249d484eee49961","_spec":"truffle-contract-schema@0.0.5","_where":"D:\\temp\\1\\class\\demo\\node_modules\\truffle-contract","author":{"name":"Tim Coulter","email":"tim.coulter@consensys.net"},"bugs":{"url":"https://github.com/trufflesuite/truffle-schema/issues"},"bundleDependencies":false,"dependencies":{"crypto-js":"^3.1.9-1"},"deprecated":false,"description":"JSON schema for contract artifacts","devDependencies":{"mocha":"^3.2.0"},"homepage":"https://github.com/trufflesuite/truffle-schema#readme","keywords":["ethereum","json","schema","contract","artifacts"],"license":"MIT","main":"index.js","name":"truffle-contract-schema","repository":{"type":"git","url":"git+https://github.com/trufflesuite/truffle-schema.git"},"scripts":{"test":"mocha"},"version":"0.0.5"}
 
 /***/ }),
 /* 144 */
@@ -43441,8 +43441,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // Import our contract artifacts and turn them into usable abstractions.
 
 
-// WonderEgg is our usable abstraction, which we'll use through the code below.
-var WonderEgg = __WEBPACK_IMPORTED_MODULE_1_truffle_contract___default()(__WEBPACK_IMPORTED_MODULE_2__build_contracts_WonderEgg_json___default.a);
+// CryptoFrog is our usable abstraction, which we'll use through the code below.
+var CryptoFrog = __WEBPACK_IMPORTED_MODULE_1_truffle_contract___default()(__WEBPACK_IMPORTED_MODULE_2__build_contracts_WonderEgg_json___default.a);
 
 // The following code is simple to show off interacting with your contracts.
 // As your needs grow you will likely need to change its form and structure.
@@ -43453,15 +43453,15 @@ var account;
 var sellrate =1;
 var buyrate =1;
 
-var wondereggContract ;
+var CryptoFrogContract ;
 var weggs ;
             
 
 window.App = {
   start: function() {
     var self = this;
-    // Bootstrap the WonderEgg abstraction for Use.
-    WonderEgg.setProvider(web3.currentProvider);
+    // Bootstrap the CryptoFrog abstraction for Use.
+    CryptoFrog.setProvider(web3.currentProvider);
 
     // Get the initial account  and set defaultAccount
     web3.eth.getAccounts(function(err, accs) {
@@ -43494,7 +43494,7 @@ window.App = {
     var self = this;
     $("#loader").show();
     var wegga;
-    WonderEgg.deployed().then(function(instance) {
+    CryptoFrog.deployed().then(function(instance) {
       wegga = instance;
       return wegga.getPrices();
     }).then(function(result){   // sellrate,buyrate
@@ -43524,7 +43524,7 @@ window.App = {
   setPrice: function() {
     var self = this;
     var wegga;
-    WonderEgg.deployed().then(function(instance) {
+    CryptoFrog.deployed().then(function(instance) {
       wegga = instance;
       return wegga.setPrices($("#sellPriceRate").val(), $("#buyPriceRate").val(), {from: account});
     }) ;
@@ -43538,7 +43538,7 @@ window.App = {
 window.addEventListener('load', function() {
   // Checking if Web3 has been injected by the browser (Mist/weggaMask)
   if (typeof web3 !== 'undefined') {
-    console.warn("Using web3 detected from external source. If you find that your accounts don't appear or you have 0 WonderEgg, ensure you've configured that source properly. If using weggaMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-weggamask")
+    console.warn("Using web3 detected from external source. If you find that your accounts don't appear or you have 0 CryptoFrog, ensure you've configured that source properly. If using weggaMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-weggamask")
     // Use Mist/weggaMask's provider
     window.web3 = new __WEBPACK_IMPORTED_MODULE_0_web3___default.a(web3.currentProvider);
   } else {
