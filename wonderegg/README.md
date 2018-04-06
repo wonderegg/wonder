@@ -1,6 +1,6 @@
 # Team mumbers:
 catherinezhou1212, 
-Jacky-Z, 
+Jacky Zhang, 
 James Xia
 
 # role: catherinezhou1212, Jacky-Z, James Xia
