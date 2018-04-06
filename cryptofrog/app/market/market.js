@@ -3,10 +3,10 @@ import { default as Web3} from 'web3';
 import { default as contract } from 'truffle-contract'
 
 // Import our contract artifacts and turn them into usable abstractions.
-import WonderEgg_artifacts from '../../build/contracts/WonderEgg.json'
+import CryptoFrog_artifacts from '../../build/contracts/WonderEgg.json'
 
-// WonderEgg is our usable abstraction, which we'll use through the code below.
-var WonderEgg = contract(WonderEgg_artifacts);
+// CryptoFrog is our usable abstraction, which we'll use through the code below.
+var CryptoFrog = contract(CryptoFrog_artifacts);
 
 // The following code is simple to show off interacting with your contracts.
 // As your needs grow you will likely need to change its form and structure.
@@ -17,7 +17,7 @@ var account;
 var sellrate =1;
 var buyrate =1;
 
-var wondereggContract ;
+var CryptoFrogContract ;
 var weggs ;
             
 
@@ -25,8 +25,8 @@ window.App = {
   start: function() {
     var self = this;
 
-    // Bootstrap the WonderEgg abstraction for Use.
-    WonderEgg.setProvider(web3.currentProvider);
+    // Bootstrap the CryptoFrog abstraction for Use.
+    CryptoFrog.setProvider(web3.currentProvider);
 
     // Get the initial account  and set defaultAccount
     web3.eth.getAccounts(function(err, accs) {
@@ -59,7 +59,7 @@ window.App = {
     var self = this;
     $("#loader").show();
     var wegga;
-    WonderEgg.deployed().then(function(instance) {
+    CryptoFrog.deployed().then(function(instance) {
       wegga = instance;
       return wegga.getPrices();
     }).then(function(result){   // sellrate,buyrate
@@ -82,7 +82,7 @@ window.App = {
 
 
     var outtext;
-    WonderEgg.deployed().then(function(instance) {
+    CryptoFrog.deployed().then(function(instance) {
       wegga = instance;
       return wegga.getlastWonderStruct({from: account});
     }).then(function(result){   // wonder.addr,wonder.id,wonder.wprice,wonder.idName,wonder.Description
@@ -114,7 +114,7 @@ window.App = {
                 case '7':
                     text = " I want to live in a world where people believe the world is flat. When my owner isn't watching, I steal their clutches and use them for litter paper. I'm not sorry. Will you be the ranch dressing to my soy sauce?";
             }
-            outtext = 'Youngest Wonder Egg ID: '+ result[1]+ '   I am '+ web3.toAscii(result[3])+'  :)  '+ String(text)+' (Price: '+result[2]/sellrate+' ether)'  ;
+            outtext = 'Youngest Crypto Frog ID: '+ result[1]+ '   I am '+ web3.toAscii(result[3])+'  :)  '+ String(text)+' (Price: '+result[2]/sellrate+' ether)'  ;
             $("#instructor").html(outtext);
             $("#idName").val(web3.toAscii(result[3]).replace(/\u0000/g, ''));
             $("#age").val(result[2]/sellrate);
@@ -135,21 +135,21 @@ window.App = {
     var imageTxt = "";
     //var wegga;
 
-    WonderEgg.deployed().then(function(instance) {
+    CryptoFrog.deployed().then(function(instance) {
       wegga = instance;
-    wondereggContract = web3.eth.contract(wegga.abi);
-    weggs = wondereggContract.at(wegga.address);
+    CryptoFrogContract = web3.eth.contract(wegga.abi);
+    weggs = CryptoFrogContract.at(wegga.address);
       return wegga.countWonderStructs();
     }).then(function(result ){  
       if (result) {
         count = result.c;
-        output =count + ' total Wonder Eggs.  only your create/purchsed wonder egg will show here with pictures, below is one Youngest born wonder egg example FYI <hr>';
+        output =count + ' total Crypto Frogs.  only your create/purchsed Crypto Frog will show here with pictures, below is one Youngest born Crypto Frog example FYI <hr>';
         for (var i = 0; i < count; i++) {
            weggs.getWonderStructByID(i, function(error, result){
             var text = '';
             if(result)
                 {
-                    var icase = result[4]%6+1;
+                    var icase = result[4]%17+1;
                     switch (icase) {
                             case '1':
                                 text = "I believe the world is flat. My great-great-great-great-great-great grandkitty lived with Confucius. I think you'll love me beclaws I have cattitude.";
@@ -179,7 +179,7 @@ window.App = {
 
                     }
                     else{
-                        imageTxt = imageTxt + '<div class="image-icon flex-container"><a href="#">'+'<img id="'+icase+'" width="100%" flex-wrap: wrap;display: flex; src="http://res.cloudinary.com/cryptofrog/image/upload/v1521082543/'+icase+'.jpg"></a><div><div style="word-wrap: break-word;">' + web3.toAscii(result[3]) + ': '+ result[1] + '</div><div style="word-wrap: break-word;">(Price: '+result[2]/sellrate+' ether)</div></div></div>';
+                        imageTxt = imageTxt + '<div class="image-icon flex-container"><a href="#">'+'<img id="'+icase+'" width="100%" flex-wrap: wrap;display: flex; src="http://res.cloudinary.com/cryptofrog/image/upload/v1522961082/f'+icase+'.png"></a><div><div style="word-wrap: break-word;">' + web3.toAscii(result[3]) + ': '+ result[1] + '</div><div style="word-wrap: break-word;">(Price: '+result[2]/sellrate+' ether)</div></div></div>';
                         //console.log("refresh get last nameid: " + outtext);
                     }
                     
@@ -200,16 +200,16 @@ window.App = {
   },
 
 
-  setWonderEgg: function() {
+  setCryptoFrog: function() {
     var self = this;
     var wegga;
-    WonderEgg.deployed().then(function(instance) {
+    CryptoFrog.deployed().then(function(instance) {
       wegga = instance;
       return wegga.setWonderStruct(web3.eth.defaultAccount, $("#age").val()*sellrate, $("#idName").val(), $("#lDescription").val(),{from: account});
     }).then(function(result ){   
                 if(result)
                     {
-                        console.log("set Wonder Egg: " + $("#idName").val() + " " + $("#lDescription").val() + " Price: " +$("#age").val()*sellrate + " for "+web3.eth.defaultAccount);
+                        console.log("set Crypto Frog: " + $("#idName").val() + " " + $("#lDescription").val() + " Price: " +$("#age").val()*sellrate + " for "+web3.eth.defaultAccount);
                         $("#loader").hide(); 
                     }
                 else{
@@ -228,7 +228,7 @@ window.App = {
   eventwonderInfo: function() {
     var self = this;
     var wegga;
-    WonderEgg.deployed().then(function(instance) {
+    CryptoFrog.deployed().then(function(instance) {
       wegga = instance;
       return wegga.wonderInfo({}, 'latest',{from: account});
     }).then(function(result ){   
@@ -260,7 +260,7 @@ window.App = {
                     case '7':
                         text = " I want to live in a world where people believe the world is flat. When my owner isn't watching, I steal their clutches and use them for litter paper. I'm not sorry. Will you be the ranch dressing to my soy sauce?";
                   }
-                $("#instructor").html('Wonder Egg ID: '+ result.args.id+'      *hissing noises*!  I am '+ web3.toAscii(result.args.idName)+'  :)  '+ String(text)+' (Price: '+result.args.age/sellrate+' ether)' );
+                $("#instructor").html('Crypto Frog ID: '+ result.args.id+'      *hissing noises*!  I am '+ web3.toAscii(result.args.idName)+'  :)  '+ String(text)+' (Price: '+result.args.age/sellrate+' ether)' );
                 $("#idName").val(web3.toAscii(result.args.idName));
                 $("#age").val(result.args.age/sellrate);
                 console.log("Event watch change Instructor: " + result.args.idName + ' ' + String(text)  + " Price: " + result.args.age/sellrate);
@@ -280,7 +280,7 @@ window.App = {
 window.addEventListener('load', function() {
   // Checking if Web3 has been injected by the browser (Mist/weggaMask)
   if (typeof web3 !== 'undefined') {
-    console.warn("Using web3 detected from external source. If you find that your accounts don't appear or you have 0 WonderEgg, ensure you've configured that source properly. If using weggaMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-weggamask")
+    console.warn("Using web3 detected from external source. If you find that your accounts don't appear or you have 0 CryptoFrog, ensure you've configured that source properly. If using weggaMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-weggamask")
     // Use Mist/weggaMask's provider
     window.web3 = new Web3(web3.currentProvider);
   } else {
