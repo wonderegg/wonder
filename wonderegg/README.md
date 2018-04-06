@@ -3,7 +3,7 @@ catherinezhou1212,
 Jacky Zhang, 
 James Xia
 
-# role: catherinezhou1212, Jacky-Z, James Xia
+# role: catherinezhou1212, Jacky Zhang, James Xia
 ## role: graphic designer,solidty developer,webpage developer,PM,Architect
 catherinezhou1212 
 Jacky-Z
