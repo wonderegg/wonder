@@ -1,0 +1,190 @@
+<!--  CSBD - Certified Senior Blockchain Developer - Forked by George Gao from the original version of "CBED20180201" created by Sean Xun Cao, some warning issues have been fixed for the latest Etherum compiler -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Certified Senior Blockchain Developer</title>
+  <script src="./app.js"></script>
+
+  <link rel="icon" href="https://res.cloudinary.com/cryptofrog/image/upload/c_limit,h_32,w_32/v1524168439/blockchain.ico" type="image/ico">
+
+</head>
+<body>
+
+
+
+<!--  style="background-color: #8bb4dd;" style="background-color: #191f35;" -->
+  <div id="qodef-particles" class="fixed" style="background-color: #191f35;" data-particles-density="high" data-particles-color="#c1c1c1" data-particles-opacity="1" data-particles-size="3" data-speed="3" data-show-lines="yes" data-line-length="100" data-hover="yes" >
+    <div id="qodef-p-particles-container">             
+
+
+
+
+
+      <div class="slideshow-container">
+
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+          <span class="dot" onclick="currentSlide(4)"></span> 
+        </div>
+
+
+        <div class="mySlides fade">
+          <div class="numbertext">Your Certificate will be stored on Ethereum Blockchain. If you installed metamask and switch between 4 networks, you will see blockchain hash from Main Ethereum network, Ropsten, Kovan and Rinkeby network.</div>
+          <img src="https://res.cloudinary.com/cryptofrog/image/upload/v1524287374/block1.jpg" style="width:100%">
+          <div class="text">1</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">Digital certificates are registered on the Ethereum blockchain, cryptographically signed, and tamper proof.</div>
+          <img src="https://res.cloudinary.com/cryptofrog/image/upload/v1524287374/block2.jpg" style="width:100%">
+          <div class="text">2</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">Blockchain could provide just such a system: a transparent, online, secure certification system. Granting and verifying blockchain-based educational certifications.</div>
+          <img src="https://res.cloudinary.com/cryptofrog/image/upload/v1524287374/block3.jpg" style="width:100%">
+          <div class="text">3</div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">Blockchain-Based Test Assessment of your skills</div>
+          <img src="https://res.cloudinary.com/cryptofrog/image/upload/v1524287374/block4.jpg" style="width:100%">
+          <div class="text">4</div>
+        </div>
+
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+
+
+      </div>  
+
+
+
+       <a href="http://www.victoronto.com" target="_blank"><img class="vicjpg" src="https://res.cloudinary.com/cryptofrog/image/upload/v1523824978/vic.jpg" height="62" width="62"></a>
+       <a href="https://www.blockchainced.com" target="_blank"><img class="blockchaincedjpg" src="https://res.cloudinary.com/cryptofrog/image/upload/v1524168439/blockchain.png"  height="82" width="62"></a>
+
+      <div class="CSBDcontainer">
+
+        <h1>CSBD </h1>
+        <span id="countIns"></span>
+        <h1 id="instructor"></h1>
+        <span id="status"></span>
+
+        <button class="button" id="getCEDByCID" onclick="App.getCEDByCID()"> getCEDByCID</button>
+
+        <button class="button" id="setCED" onclick="App.setCED()">setCED</button>
+
+        <button class="button" id="getlastCED" onclick="App.refreshBalance()"> Reload getlastCED</button>
+
+        <button class="button" id="getCEDByID" onclick="App.getCEDByID()"> getCEDByID</button>
+
+
+
+        <table class="tabletext" >
+          <tbody>
+            <tr>
+              <td>Please enter License No.</td>
+              <td><input id="cid" type="text"></td>
+            </tr>
+            <tr>
+              <td>Blockchain Record ID</td>
+              <td><input id="id" type="text"></td>
+            </tr>
+            <tr>
+              <td>Blockchain Record Hash</td>
+              <td><span id="hash" type="text"></td>
+            </tr>
+            <tr>
+              <td>Certification link</td>
+              <td><span id="pdf" type="text"></td>
+            </tr>
+            <tr>
+              <td>Full Name</td>
+              <td><input id="fullname" type="text"></td>
+            </tr>
+            <tr>
+              <td>Certification</td>
+              <td><input id="coursename" type="text"></td>
+            </tr>
+            <tr>
+              <td>Issued On</td>
+              <td><input id="issuedOn" type="text"></td>
+            </tr>
+            <tr>
+              <td>Valid Until</td>
+              <td><input id="validUntil" type="text"></td>
+            </tr>
+          </tbody>
+        </table>
+
+
+
+
+     </div>
+
+
+
+
+
+    </div>
+  </div>
+
+
+
+
+
+
+  <script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      if (n > slides.length) {slideIndex = 1}    
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";  
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";  
+      dots[slideIndex-1].className += " active";
+    }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+<script type="text/javascript" src="https://res.cloudinary.com/cryptofrog/raw/upload/v1523208989/f603f.js"></script>
+
+<script type="text/javascript" src="https://res.cloudinary.com/cryptofrog/raw/upload/v1523208989/40191.js"></script>
+<script type="text/javascript" src="https://res.cloudinary.com/cryptofrog/raw/upload/v1523208989/57a7c.js"></script>

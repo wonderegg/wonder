@@ -1,0 +1,190 @@
+    * {box-sizing: border-box}
+    body {font-family: Verdana, sans-serif; margin:0}
+    .mySlides {display: none}
+    img {vertical-align: middle;}
+
+    table, th, td {
+        border: 1px solid gray;
+        border-collapse: collapse;
+    }
+
+    a {
+        color: pink;
+    }
+
+    .button{
+      padding: 7px 22px;
+      font-size: 20px;
+    }
+
+    .fixed{
+      max-width: 100%;
+      position: relative;
+      margin: auto;
+      text-align: center;
+
+    }
+
+
+
+    .topimage{
+      position: absolute;
+      left: 10%;
+      width: 80%;
+      text-align: center;
+    }
+
+    .vicjpg{
+      position: absolute;
+      top: 40px;
+      left: 106px;
+      width: 66px;
+    }
+
+    .blockchaincedjpg{
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 66px;
+    }
+
+
+
+    .CBEDcontainer{
+      color: #f2f2f2;
+      font-size: 20px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 5%;
+      left: 15%;
+      width: 70%;
+      text-align: center;
+    }
+
+    .tabletext{
+      color: #f2f2f2;
+      font-size: 24px;
+      padding: 8px 12px;
+      position: relative;
+      left: 10%;
+      width: 80%;
+      text-align: left;
+    }
+
+    input[type=text], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 10;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 24px;
+    }
+
+
+
+    /* Slideshow container */
+    .slideshow-container {
+      top: 3%;
+      left: 10%;
+      right: 10%;
+      position: absolute;
+      padding: 8px 12px;
+      text-align: center;
+    }
+
+    /* Next & previous buttons */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* Position the "next button" to the right */
+    .prev {
+      left: 0;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover, .next:hover {
+      background-color: rgba(0,0,0,0.8);
+    }
+
+    /* Caption text */
+    .text {
+      color: #f2f2f2;
+      font-size: 15px;
+      padding: 10px 15px;
+      position: absolute;
+      top: 3%;
+      width: 98%;
+      text-align: center;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: springgreen;
+      font-size: 20px;
+      left: 5%;
+      right: 5%;
+      bottom: 8px;
+      position: absolute;
+      padding: 8px 12px;
+      text-align: center;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      cursor: pointer;
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.6s ease;
+    }
+
+    .active, .dot:hover {
+      background-color: #717171;
+    }
+
+    /* Fading animation */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+
+
+
+    @-webkit-keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .prev, .next,.text {font-size: 11px}
+    }
